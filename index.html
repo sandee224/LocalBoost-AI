@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Rathod Hair Art | The Art of Precision</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&amp;family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "primary-fixed": "#e5e2e1",
+                    "on-secondary": "#ffffff",
+                    "inverse-surface": "#2f3132",
+                    "error": "#ba1a1a",
+                    "outline-variant": "#c4c7c7",
+                    "tertiary-fixed": "#e2e2e2",
+                    "on-tertiary-fixed": "#1a1c1c",
+                    "on-primary-fixed": "#1c1b1b",
+                    "on-surface": "#1a1c1d",
+                    "secondary-fixed-dim": "#e9c349",
+                    "tertiary-fixed-dim": "#c6c6c7",
+                    "surface-tint": "#5f5e5e",
+                    "error-container": "#ffdad6",
+                    "tertiary-container": "#1a1c1c",
+                    "surface-bright": "#f9f9fb",
+                    "on-secondary-fixed-variant": "#574500",
+                    "primary-fixed-dim": "#c8c6c5",
+                    "tertiary": "#000000",
+                    "surface-dim": "#d9dadc",
+                    "inverse-on-surface": "#f0f0f2",
+                    "on-secondary-fixed": "#241a00",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-variant": "#e2e2e4",
+                    "surface": "#f9f9fb",
+                    "on-background": "#1a1c1d",
+                    "secondary-fixed": "#ffe088",
+                    "on-secondary-container": "#745c00",
+                    "on-primary": "#ffffff",
+                    "primary": "#000000",
+                    "on-error-container": "#93000a",
+                    "primary-container": "#1c1b1b",
+                    "on-primary-fixed-variant": "#474646",
+                    "secondary": "#735c00",
+                    "on-secondary-container": "#745c00",
+                    "on-error": "#ffffff",
+                    "secondary-container": "#fed65b",
+                    "surface-container": "#eeeef0",
+                    "outline": "#747878",
+                    "background": "#f9f9fb",
+                    "on-tertiary": "#ffffff",
+                    "surface-container-low": "#f3f3f5",
+                    "on-surface-variant": "#444748",
+                    "on-tertiary-fixed-variant": "#454747",
+                    "inverse-primary": "#c8c6c5",
+                    "surface-container-highest": "#e2e2e4",
+                    "surface-container-high": "#e8e8ea",
+                    "on-tertiary-container": "#838484"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "2xl": "1.5rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "gutter": "24px",
+                    "section-gap-mobile": "64px",
+                    "base": "8px",
+                    "container-max-width": "1440px",
+                    "section-gap-desktop": "128px"
+            },
+            "fontFamily": {
+                    "headline-md": ["Playfair Display"],
+                    "label-sm": ["Manrope"],
+                    "headline-lg": ["Playfair Display"],
+                    "display-lg": ["Playfair Display"],
+                    "body-lg": ["Manrope"],
+                    "display-lg-mobile": ["Playfair Display"],
+                    "body-md": ["Manrope"],
+                    "headline-lg-mobile": ["Playfair Display"],
+                    "label-lg": ["Manrope"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .glass {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md overflow-x-hidden">
+<!-- Top Navigation -->
+<nav class="fixed top-0 w-full z-50 bg-surface/70 dark:bg-surface-container/70 backdrop-blur-md border-b border-outline-variant/5">
+<div class="flex justify-between items-center px-gutter py-4 max-w-container-max-width mx-auto">
+<a class="font-headline-md text-headline-md font-bold text-primary dark:text-on-surface tracking-tight" href="#">Rathod Hair Art</a>
+<div class="hidden md:flex gap-8 items-center">
+<a class="font-label-lg text-label-lg text-primary dark:text-on-surface border-b-2 border-primary pb-1 transition-all" href="#home">Home</a>
+<a class="font-label-lg text-label-lg text-on-surface-variant hover:text-secondary transition-colors" href="#about">About</a>
+<a class="font-label-lg text-label-lg text-on-surface-variant hover:text-secondary transition-colors" href="#services">Services</a>
+<a class="font-label-lg text-label-lg text-on-surface-variant hover:text-secondary transition-colors" href="#gallery">Gallery</a>
+<a class="font-label-lg text-label-lg text-on-surface-variant hover:text-secondary transition-colors" href="#reviews">Reviews</a>
+</div>
+<button class="hidden md:block bg-primary text-on-primary px-8 py-3 rounded-xl font-label-lg hover:bg-secondary transition-all active:scale-95">
+                Book Now
+            </button>
+<button class="md:hidden text-primary">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</nav>
+<!-- Hero Section -->
+<section class="relative h-screen w-full flex items-center justify-center overflow-hidden" id="home">
+<div class="absolute inset-0 z-0">
+<div class="w-full h-full bg-cover bg-center" data-alt="A grand front view of a luxury hair salon named Rathod Hair Art at sunset. The building features minimalist architectural lines, large floor-to-ceiling glass windows revealing a warm, golden-lit interior, and a sleek black marble facade. The street outside is clean and sophisticated, reflecting the high-end, exclusive atmosphere of a premium grooming destination. Soft cinematic lighting enhances the surgical precision of the design." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAR_b-0QudWIlIKZ_GnxS6SbBzTpzKSgPWnlpPqa_3BBqnKr1EDqibe52Q-kAFJ1jrP3_veK3tOQrL345Vfp_YQ5elIoL8OosvHIUQ7GjiXxNOrAFx7_lFXPYLOThV7nl4DJUIbi3Ko5yET_m09hW4ae1PMq_DtgMVaT9sA6Y1zm4t_C9tpunZgPD3YvpYddidG_aP7z3z0F-lOJ-CBVb5defkD8rd_ggSTmaQ3u-6NKtm-zNQGBL5kpg')"></div>
+<div class="absolute inset-0 bg-black/40"></div>
+</div>
+<div class="relative z-10 text-center px-gutter max-w-4xl">
+<h1 class="font-display-lg text-display-lg-mobile md:text-display-lg text-white mb-6 leading-tight drop-shadow-lg">The Art of Precision</h1>
+<p class="font-body-lg text-body-lg text-white/90 mb-10 max-w-2xl mx-auto drop-shadow-md">Elevate your grooming experience with surgical precision and artisanal craftsmanship in an environment of quiet luxury.</p>
+<div class="flex flex-col md:flex-row gap-4 justify-center">
+<button class="bg-secondary-container text-on-secondary-container px-10 py-5 rounded-2xl font-label-lg text-lg hover:scale-105 transition-transform shadow-xl flex items-center justify-center gap-2">
+                    Book Appointment
+                    <span class="material-symbols-outlined">calendar_month</span>
+</button>
+<button class="glass text-primary px-10 py-5 rounded-2xl font-label-lg text-lg border border-white/20 hover:bg-white transition-all shadow-xl">
+                    View Services
+                </button>
+</div>
+</div>
+</section>
+<!-- About Section -->
+<section class="py-section-gap-mobile md:py-section-gap-desktop bg-surface-container-lowest px-gutter" id="about">
+<div class="max-w-container-max-width mx-auto grid md:grid-cols-2 gap-16 items-center reveal">
+<div class="relative group">
+<div class="aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="The sophisticated interior of Rathod Hair Art salon, showcasing an ultra-modern aesthetic inspired by Tesla and Apple design languages. Features include ergonomic black leather chairs, minimalist brushed metal workstations, and integrated ambient LED lighting. The floor is a polished light grey concrete, and the space is characterized by vast negative space and a clean, clinical yet warm environment that feels like a high-end gallery." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCWvuwxy_KqpdrVFvfxIi0kxkv8Z3nHnYUon9uHrvsyMYPjBlbOuYEGgr1xGat7JrQwZChRbqOGw_0yyccWILTUex-e4plJGmdFdbsdX27YtkCiLnJk3frG3yqRg8DEB1UkYbEj3cqkXiF9X5W0_41A7JtyeqO4S2pBh9-l247DGlQdNTUDqw4W4P1QtacQhp_DiVm9saBMo85QzXZwPeyXTi0xTRqoNCwm9H_QuUQ29gSUC73PXIy9zA"/>
+</div>
+<div class="absolute -bottom-8 -right-8 glass p-8 rounded-2xl shadow-xl hidden md:block">
+<p class="font-headline-md text-headline-md text-secondary leading-none">15+</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest mt-2">Years of Mastery</p>
+</div>
+</div>
+<div class="space-y-8">
+<div class="space-y-4">
+<span class="font-label-lg text-label-lg text-secondary tracking-widest uppercase">The Heritage</span>
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary">Crafted for the Discerning Individual</h2>
+</div>
+<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+                    At Rathod Hair Art, we believe hair care is both an art form and a sophisticated science. Our studio is designed as a sanctuary of minimalist-premium aesthetics, where every cut is executed with the meticulous detail of a surgeon and the vision of an artist.
+                </p>
+<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+                    We steer clear of traditional salon tropes, opting instead for a high-end editorial experience that prioritizes your comfort and the health of your hair. Our commitment to quiet luxury ensures that every visit is more than an appointment—it's a transformation.
+                </p>
+<div class="pt-6 border-t border-outline-variant/30 flex gap-12">
+<div>
+<p class="font-headline-md text-headline-md text-primary">5k+</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-tighter">Happy Clients</p>
+</div>
+<div>
+<p class="font-headline-md text-headline-md text-primary">100%</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-tighter">Precision Focus</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Services Section -->
+<section class="py-section-gap-mobile md:py-section-gap-desktop bg-surface px-gutter overflow-hidden" id="services">
+<div class="max-w-container-max-width mx-auto">
+<div class="text-center mb-20 reveal">
+<span class="font-label-lg text-label-lg text-secondary tracking-widest uppercase">Curated Menu</span>
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary mt-4">Signature Services</h2>
+</div>
+<div class="grid md:grid-cols-3 gap-8 reveal">
+<!-- Service Card 1 -->
+<div class="bg-surface-container-lowest p-8 rounded-2xl border border-outline-variant/20 hover:border-secondary transition-all group relative overflow-hidden">
+<div class="h-64 mb-8 rounded-xl overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="A close-up, high-detail shot of a professional barber performing a precision fade haircut on a client. The lighting is focused and dramatic, highlighting the clean lines and artistic technique. The background is a soft-focus minimalist salon interior. The overall aesthetic is clean, surgical, and premium, using a palette of deep blacks and soft greys with golden light reflections." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBMt4cwWDc2TYxGVBaFOUEZfMMjxj9CUHWa6MsAOGa6Y1DDpGw9RDSLQVqxdM9MRg1WVW_n7lutXWD3dAWedSVGT3KuBM_-mCTL2_Rug09Ts3wexfH8WATt0T-6eaJMPThpA6HuRcm8ipwvUF4KnimP0dVmdCXvlfN4WyMGeyIRx6Bc_2XBHVTfcNY7jNaqurlWQ2iiMXMHrOTxMQiSZKAQnHttD_izd5jXGRmG8YIJgMfUKJtpoflBig"/>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary mb-4">Precision Haircut</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">A masterfully tailored cut designed to complement your facial structure and personal style.</p>
+<div class="flex items-center justify-between">
+<span class="font-label-lg text-label-lg text-secondary">FROM $45</span>
+<span class="material-symbols-outlined text-primary group-hover:translate-x-2 transition-transform">arrow_forward</span>
+</div>
+</div>
+<!-- Service Card 2 -->
+<div class="bg-surface-container-lowest p-8 rounded-2xl border border-outline-variant/20 hover:border-secondary transition-all group relative overflow-hidden">
+<div class="h-64 mb-8 rounded-xl overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="A luxury beard grooming session in progress. A stylist uses high-end brushed metal tools and organic premium oils on a well-groomed beard. The atmosphere is calm and exclusive, with soft warm lighting highlighting the textures of the hair and the elegant packaging of the products. The scene exudes an air of quiet luxury and artisanal craftsmanship." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA_tmOYGIJUxtVfGkKKA8aXLlBBat7E1TL4XYZ6QrXDGffdfZO_w2oTFDg12zfEt59f1aTuOM9N12jMZ3V2KsG8XgWVyDkMx8vsTqd2uSvRQ62Dv2442BXKZgDxSkTUg4myhpG7PARn9bSIff9dcyEusVuJ5xdO2K6xmQciy5OvS86c2_FjEiR436GYZOYKql2Lfs50qvfWGEojfmUbomlIK_cpagTXY9bMn1X-Id9yoczD82ShB5Vpng"/>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary mb-4">Sculpted Beard Trim</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">Complete beard architecture including hot towel treatment and razor-edge detailing.</p>
+<div class="flex items-center justify-between">
+<span class="font-label-lg text-label-lg text-secondary">FROM $30</span>
+<span class="material-symbols-outlined text-primary group-hover:translate-x-2 transition-transform">arrow_forward</span>
+</div>
+</div>
+<!-- Service Card 3 -->
+<div class="bg-surface-container-lowest p-8 rounded-2xl border border-outline-variant/20 hover:border-secondary transition-all group relative overflow-hidden">
+<div class="h-64 mb-8 rounded-xl overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="A collection of premium, high-end hair styling products arranged on a minimalist black marble shelf. The packaging is sleek, matte black with gold embossed lettering. Soft ambient lighting creates elegant reflections on the bottles. The composition is balanced and editorial, suggesting a fusion of sophisticated science and artistic hair care." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBLTEn8wtgf9kbqFM8X6CmPxSC868mwfAm6UTLk4DRdihcaglKaBSNKqEcmPChUCAGm4tUh1YlRpWAS4ke959l6OCkgdQuNBUBvyVOKaDX9fA-un-4QfHRfSmMuSFQVVCv2EJlVeBO9uMCt4YavpI9YFoa2mhvyDw0EDjX8-r5DiE4-ci5dSDmt18U181dyNDAozR6uqMgMA5Dki0ynHN8lXkFXyWm2BkY6YfrYIFr9oIYc5huYR-GXoQ"/>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary mb-4">Artistic Styling</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">Editorial-grade styling using world-class products for special occasions or daily elegance.</p>
+<div class="flex items-center justify-between">
+<span class="font-label-lg text-label-lg text-secondary">FROM $25</span>
+<span class="material-symbols-outlined text-primary group-hover:translate-x-2 transition-transform">arrow_forward</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Gallery Section (Masonry) -->
+<section class="py-section-gap-mobile md:py-section-gap-desktop bg-surface-container-lowest px-gutter" id="gallery">
+<div class="max-w-container-max-width mx-auto">
+<div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6 reveal">
+<div class="max-w-xl">
+<span class="font-label-lg text-label-lg text-secondary tracking-widest uppercase">The Exhibit</span>
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary mt-4">Visual Masterpieces</h2>
+</div>
+<button class="font-label-lg text-label-lg text-primary border-b border-primary hover:text-secondary hover:border-secondary transition-colors pb-1">VIEW ALL WORK</button>
+</div>
+<div class="columns-1 md:columns-3 gap-6 space-y-6 reveal">
+<div class="rounded-2xl overflow-hidden group relative">
+<img class="w-full h-auto transition-transform duration-500 group-hover:scale-105" data-alt="A high-contrast editorial portrait of a man with a perfectly executed modern pompadour haircut. The lighting is sharp, emphasizing the texture and precision of the hair. The background is a clean, neutral grey. The mood is sophisticated and fashion-forward, reflecting a high-end salon aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD08QgEpjgN_ByiajQ2aveZ4IMJKFxtUSG5Q8Vs2mJNdKCkLLTgho8jZUJFSRBzPGLG9K0kyYR5lxz1Kj4R_YpJnOy3ftGDSMNMO2yvbFTIbx8efofUsPkrD5rv0qU4EcV6vI2ZF4QOdNzCaWA579pe8VWpX9uitNxPOFl6aLC6w-8kQ6m1iUm-czp73DrY3JO0-fVhknOS6pbamynEBDkpGtt62fvZOL9l2Zxsh2O0_smQ4XgJ8u830A"/>
+</div>
+<div class="rounded-2xl overflow-hidden group relative">
+<img class="w-full h-auto transition-transform duration-500 group-hover:scale-105" data-alt="A close-up photo of professional hair cutting shears and combs resting on a clean, white surgical tray. The tools are made of high-quality brushed steel. The lighting is bright and even, highlighting the cleanliness and precision of the equipment used at Rathod Hair Art." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCDK9DOewlz_FuR2jHFaC218lI9vyfMAFyacbOAdJEEvfxnf2vEOZNhH0brkFrnquI5SqZ-paf-cNC5NTeAJd7gR0efeUeOjEWZnQivdE8p7Ms5A4u97ZAQRaNQN1NcYE28vgTZ1VuXHCeqQYW_j-GAhzZGLbYZ7mEGhPBgvQKiZlI9PsrtiLfOXYncbVHi3KaEbEA_j9EfqD571uBc3g-0dn1UBM1VftqSCkNXPLaZj8x65KxbBAkpXg"/>
+</div>
+<div class="rounded-2xl overflow-hidden group relative">
+<img class="w-full h-auto transition-transform duration-500 group-hover:scale-105" data-alt="An interior shot of the salon during a busy morning. Stylists are seen in blurred motion around elegant chairs, while the morning sun streams through large glass windows, creating long shadows on the polished floor. The scene is one of organized, professional activity in a luxury setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD9guX-8h3jWNV1CaiqmZt-UKfxzCu2ET3903g0z7_2Vaxh8NtoSTWBRzbVPcfPiT3EWGMpI35n2UErKaQeVZb4tG01BI6d2gtKc418jy0CImgETEFTuz5mFgSfb7El-vYERRJefJewNFNyo5863HHLOGk3_P3mNnJH79QGvUjDzJmLIC9Qk1Crs6FQoge-DfS5l5X-auUNXZ_D0NRbWW-C-FTAXU632y6R1PSCQWtAEGwPyDYOrAopbA"/>
+</div>
+<div class="rounded-2xl overflow-hidden group relative">
+<img class="w-full h-auto transition-transform duration-500 group-hover:scale-105" data-alt="A detailed shot of a client's neck hair being meticulously trimmed with a straight razor. The focus is sharp on the razor and the clean skin line. Soft steam from a hot towel is visible in the background, adding to the sensory experience of a premium shave." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB26Ft5Ms9I_cFLqUIWowv39qG9zFA186Vf8-HBWMB92igFxehKkCHVGdMNOKGk6oTFsy69U0tKYYxZAq5ZJH7fMPW38THvcsJxOV9yqVXqqJn5_hM5FDcAyq6zI0_osdicmrUraVlv_ty0l8McTE80VISbcYJ_NC5i3G82MvxC_fxgMDeO_C5xWJoz4e0I3pAYY_HnGKL116vtGwsRtK3IUFceoR5sN3-D29OFGWEBjCGVsPjppIyC1w"/>
+</div>
+<div class="rounded-2xl overflow-hidden group relative">
+<img class="w-full h-auto transition-transform duration-500 group-hover:scale-105" data-alt="A satisfied customer looking into a minimalist circular mirror at his new haircut. The reflection shows a crisp, modern style. The surrounding salon walls are a textured off-white, and a gold-accented wall sconce provides warm side-lighting. The mood is one of quiet confidence." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD4s7GcX4-o_FGg8_nJOHclrYNSbwcEAFIXL_HIjcWSv03yxCWToDRfthrpfh9BkDiAg6dYCmE5B8H0t91OqKVyKTZYwGEXDb5m_yE2d2peamQyI8v6xMPJU7Td7mQovqVg3MVKyjk1fdtEDl-frepVwpZdFpCU5-uqN_grfIw-J-XZWzkyeU0N5Q1hZdvpUC1aDaD0PbsLlafHWVa_oeZf0-d-oevufd_xe3yXy_BZvRbo2QzYcVUfvg"/>
+</div>
+<div class="rounded-2xl overflow-hidden group relative">
+<img class="w-full h-auto transition-transform duration-500 group-hover:scale-105" data-alt="A macro photograph showing the application of a luxury styling wax. The texture of the wax is creamy and rich, being picked up by a professional's finger. The container is elegant glass. This image emphasizes the quality of materials used in the salon." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAnzyXs3uCJMI0viRLPV1-CPPktaqJ6A_6VQI_kiGjA6fydM8pPjYLhzNcr1mP0blHe4mZ0bNTMWp4w3Rzq1BWZCJ_NYeTyY_ufnKnpZURgZywAa3Pk8nU3kr_hPbGmBls9-2zt6pD91yxL6pVa_XAfdIm2EzxlrlnxHSJWSnwPeZuQeqzO1MPz7RZDc1pMiM1GPnNDcpYd1W1o-f1FH7QcG5Fd3eP-5Ht7RVEHl1iSwsrqIDN4gDTDgQ"/>
+</div>
+</div>
+</div>
+</section>
+<!-- Reviews Section -->
+<section class="py-section-gap-mobile md:py-section-gap-desktop bg-primary text-on-primary overflow-hidden relative" id="reviews">
+<div class="absolute top-0 right-0 w-96 h-96 bg-secondary/10 rounded-full blur-[120px] -mr-48 -mt-48"></div>
+<div class="absolute bottom-0 left-0 w-96 h-96 bg-secondary/10 rounded-full blur-[120px] -ml-48 -mb-48"></div>
+<div class="max-w-container-max-width mx-auto px-gutter text-center relative z-10 reveal">
+<div class="inline-flex items-center gap-2 mb-8 bg-white/10 px-6 py-2 rounded-full border border-white/10">
+<span class="material-symbols-outlined text-secondary-fixed-dim" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-secondary-fixed-dim" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-secondary-fixed-dim" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-secondary-fixed-dim" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-secondary-fixed-dim" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<h2 class="font-display-lg text-display-lg-mobile md:text-display-lg mb-12">The Verdict of Elegance</h2>
+<div class="grid md:grid-cols-2 gap-16 items-center text-left">
+<div class="space-y-12">
+<div class="space-y-4 border-l-2 border-secondary pl-8">
+<p class="font-headline-md text-headline-md text-white">"The precision is unlike anything I've experienced. Truly a Tesla-standard for hair."</p>
+<cite class="font-label-lg text-label-lg text-white/60 block not-italic">— JULIAN V., REGULAR CLIENT</cite>
+</div>
+<div class="space-y-4 border-l-2 border-secondary pl-8 opacity-60">
+<p class="font-headline-md text-headline-md text-white">"A sanctuary of calm and mastery. I wouldn't trust anyone else with my grooming."</p>
+<cite class="font-label-lg text-label-lg text-white/60 block not-italic">— MARCUS D., ENTREPRENEUR</cite>
+</div>
+</div>
+<div class="bg-white/5 backdrop-blur-md p-12 rounded-3xl border border-white/10 text-center">
+<p class="font-label-sm text-label-sm text-secondary uppercase tracking-[0.3em] mb-4">Verified Experience</p>
+<div class="font-display-lg text-8xl md:text-9xl mb-2">5.0</div>
+<p class="font-headline-md text-headline-md text-white mb-8">Google Rating</p>
+<div class="h-px bg-white/20 w-1/2 mx-auto mb-8"></div>
+<p class="font-body-lg text-body-lg text-white/70">Based on 19 authentic client reviews across all platforms.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Floating CTAs -->
+<div class="fixed right-6 bottom-32 flex flex-col gap-4 z-40 md:right-10 md:bottom-10">
+<a class="w-14 h-14 md:w-16 md:h-16 bg-[#25D366] text-white rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-transform active:scale-95" href="https://wa.me/#">
+<span class="material-symbols-outlined text-3xl">chat</span>
+</a>
+<a class="w-14 h-14 md:w-16 md:h-16 bg-primary text-white rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-transform active:scale-95" href="tel:#">
+<span class="material-symbols-outlined text-3xl">call</span>
+</a>
+</div>
+<!-- Bottom Booking Bar (Mobile Only) -->
+<div class="fixed bottom-0 left-0 w-full z-50 md:hidden glass p-4 border-t border-outline-variant/10 flex justify-around items-center shadow-lg">
+<a class="flex flex-col items-center justify-center text-on-surface-variant font-label-sm text-label-sm active:scale-95 transition-transform" href="tel:#">
+<span class="material-symbols-outlined mb-1">call</span>
+            Call
+        </a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant font-label-sm text-label-sm active:scale-95 transition-transform" href="https://wa.me/#">
+<span class="material-symbols-outlined mb-1">chat</span>
+            WhatsApp
+        </a>
+<button class="bg-primary text-on-primary px-8 py-3 rounded-xl font-label-lg flex items-center justify-center gap-2 shadow-xl active:scale-95 transition-transform">
+<span class="material-symbols-outlined">calendar_month</span>
+            Book Now
+        </button>
+</div>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest dark:bg-surface-container-lowest border-t border-outline-variant">
+<div class="max-w-container-max-width mx-auto px-gutter py-section-gap-mobile md:py-section-gap-desktop flex flex-col md:flex-row justify-between gap-12">
+<div class="space-y-6 max-w-sm">
+<h3 class="font-headline-md text-headline-md font-bold text-primary">Rathod Hair Art</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Defining the standard of grooming through artisanal craft and technological precision since 2009.</p>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-full border border-outline flex items-center justify-center hover:bg-primary hover:text-white transition-all" href="#"><span class="material-symbols-outlined text-lg">public</span></a>
+<a class="w-10 h-10 rounded-full border border-outline flex items-center justify-center hover:bg-primary hover:text-white transition-all" href="#"><span class="material-symbols-outlined text-lg">photo_camera</span></a>
+</div>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-3 gap-12">
+<div class="space-y-4">
+<p class="font-label-lg text-label-lg text-primary uppercase">Studio</p>
+<ul class="space-y-2 font-body-md text-body-md text-on-surface-variant">
+<li><a class="hover:text-secondary transition-colors" href="#about">Our Story</a></li>
+<li><a class="hover:text-secondary transition-colors" href="#gallery">The Exhibit</a></li>
+<li><a class="hover:text-secondary transition-colors" href="#reviews">Client Journal</a></li>
+</ul>
+</div>
+<div class="space-y-4">
+<p class="font-label-lg text-label-lg text-primary uppercase">Services</p>
+<ul class="space-y-2 font-body-md text-body-md text-on-surface-variant">
+<li><a class="hover:text-secondary transition-colors" href="#">Hair Design</a></li>
+<li><a class="hover:text-secondary transition-colors" href="#">Beard Sculpting</a></li>
+<li><a class="hover:text-secondary transition-colors" href="#">Elite Treatments</a></li>
+</ul>
+</div>
+<div class="space-y-4 col-span-2 md:col-span-1">
+<p class="font-label-lg text-label-lg text-primary uppercase">Connect</p>
+<ul class="space-y-2 font-body-md text-body-md text-on-surface-variant">
+<li>Privacy Policy</li>
+<li>Terms of Service</li>
+<li>Contact Us</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="max-w-container-max-width mx-auto px-gutter py-8 border-t border-outline-variant/30 text-center md:text-left">
+<p class="font-body-md text-body-md text-on-surface-variant opacity-60">© 2024 Rathod Hair Art. All rights reserved. Crafted for Excellence.</p>
+</div>
+</footer>
+<script>
+        // Reveal Animations
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // Smooth Scroll Active Link Handler
+        window.addEventListener('scroll', () => {
+            let current = "";
+            const sections = document.querySelectorAll("section");
+            const navLinks = document.querySelectorAll("nav a");
+
+            sections.forEach((section) => {
+                const sectionTop = section.offsetTop;
+                if (pageYOffset >= sectionTop - 100) {
+                    current = section.getAttribute("id");
+                }
+            });
+
+            navLinks.forEach((link) => {
+                link.classList.remove("border-b-2", "border-primary", "pb-1");
+                link.classList.add("text-on-surface-variant");
+                if (link.getAttribute("href") === `#${current}`) {
+                    link.classList.add("border-b-2", "border-primary", "pb-1");
+                    link.classList.remove("text-on-surface-variant");
+                }
+            });
+        });
+    </script>
+</body></html>
