@@ -1,11 +1,15 @@
 <!DOCTYPE html>
+
 <html class="scroll-smooth" lang="en"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Rathod Hair Art | The Art of Precision</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&amp;family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<title>RATHOD HAIR ART | Precision Crafted Men's Grooming</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <script id="tailwind-config">
       tailwind.config = {
@@ -13,391 +17,574 @@
         theme: {
           extend: {
             "colors": {
-                    "primary-fixed": "#e5e2e1",
-                    "on-secondary": "#ffffff",
-                    "inverse-surface": "#2f3132",
-                    "error": "#ba1a1a",
-                    "outline-variant": "#c4c7c7",
-                    "tertiary-fixed": "#e2e2e2",
-                    "on-tertiary-fixed": "#1a1c1c",
-                    "on-primary-fixed": "#1c1b1b",
-                    "on-surface": "#1a1c1d",
-                    "secondary-fixed-dim": "#e9c349",
-                    "tertiary-fixed-dim": "#c6c6c7",
-                    "surface-tint": "#5f5e5e",
-                    "error-container": "#ffdad6",
-                    "tertiary-container": "#1a1c1c",
-                    "surface-bright": "#f9f9fb",
-                    "on-secondary-fixed-variant": "#574500",
-                    "primary-fixed-dim": "#c8c6c5",
-                    "tertiary": "#000000",
-                    "surface-dim": "#d9dadc",
-                    "inverse-on-surface": "#f0f0f2",
-                    "on-secondary-fixed": "#241a00",
-                    "surface-container-lowest": "#ffffff",
-                    "surface-variant": "#e2e2e4",
-                    "surface": "#f9f9fb",
-                    "on-background": "#1a1c1d",
-                    "secondary-fixed": "#ffe088",
-                    "on-secondary-container": "#745c00",
-                    "on-primary": "#ffffff",
-                    "primary": "#000000",
-                    "on-error-container": "#93000a",
-                    "primary-container": "#1c1b1b",
-                    "on-primary-fixed-variant": "#474646",
-                    "secondary": "#735c00",
-                    "on-secondary-container": "#745c00",
-                    "on-error": "#ffffff",
-                    "secondary-container": "#fed65b",
-                    "surface-container": "#eeeef0",
-                    "outline": "#747878",
-                    "background": "#f9f9fb",
-                    "on-tertiary": "#ffffff",
-                    "surface-container-low": "#f3f3f5",
-                    "on-surface-variant": "#444748",
-                    "on-tertiary-fixed-variant": "#454747",
-                    "inverse-primary": "#c8c6c5",
-                    "surface-container-highest": "#e2e2e4",
-                    "surface-container-high": "#e8e8ea",
-                    "on-tertiary-container": "#838484"
+                "secondary-fixed-dim": "#c6c6c7",
+                "inverse-on-surface": "#f0f0f2",
+                "on-primary-fixed": "#1b1b1b",
+                "on-background": "#1a1c1d",
+                "on-secondary-fixed-variant": "#454747",
+                "on-secondary": "#ffffff",
+                "surface": "#f9f9fb",
+                "on-tertiary-fixed-variant": "#46464b",
+                "tertiary-fixed-dim": "#c6c6cb",
+                "surface-variant": "#e2e2e4",
+                "on-secondary-container": "#616363",
+                "primary-container": "#1b1b1b",
+                "surface-bright": "#f9f9fb",
+                "surface-container-high": "#e8e8ea",
+                "on-error-container": "#93000a",
+                "primary-fixed": "#e2e2e2",
+                "on-primary-fixed-variant": "#474747",
+                "error": "#ba1a1a",
+                "tertiary-container": "#1a1b1f",
+                "surface-container-low": "#f3f3f5",
+                "surface-dim": "#d9dadc",
+                "primary-fixed-dim": "#c6c6c6",
+                "primary": "#000000",
+                "surface-container": "#eeeef0",
+                "tertiary-fixed": "#e3e2e7",
+                "on-surface": "#1a1c1d",
+                "secondary-fixed": "#e2e2e2",
+                "surface-container-highest": "#e2e2e4",
+                "inverse-surface": "#2f3132",
+                "on-tertiary": "#ffffff",
+                "on-error": "#ffffff",
+                "surface-container-lowest": "#ffffff",
+                "tertiary": "#000000",
+                "error-container": "#ffdad6",
+                "outline-variant": "#cfc4c5",
+                "on-secondary-fixed": "#1a1c1c",
+                "background": "#f9f9fb",
+                "secondary": "#5d5f5f",
+                "inverse-primary": "#c6c6c6",
+                "on-primary-container": "#848484",
+                "surface-tint": "#5e5e5e",
+                "outline": "#7e7576",
+                "on-surface-variant": "#4c4546",
+                "secondary-container": "#dfe0e0",
+                "on-primary": "#ffffff",
+                "on-tertiary-container": "#838388",
+                "on-tertiary-fixed": "#1a1b1f"
             },
             "borderRadius": {
-                    "DEFAULT": "0.25rem",
-                    "lg": "0.5rem",
-                    "xl": "0.75rem",
-                    "2xl": "1.5rem",
-                    "full": "9999px"
+                "DEFAULT": "1rem",
+                "lg": "2rem",
+                "xl": "3rem",
+                "full": "9999px"
             },
             "spacing": {
-                    "gutter": "24px",
-                    "section-gap-mobile": "64px",
-                    "base": "8px",
-                    "container-max-width": "1440px",
-                    "section-gap-desktop": "128px"
+                "margin-mobile": "20px",
+                "section-gap": "120px",
+                "margin-desktop": "64px",
+                "gutter": "24px",
+                "unit": "8px",
+                "container-max": "1280px"
             },
             "fontFamily": {
-                    "headline-md": ["Playfair Display"],
-                    "label-sm": ["Manrope"],
-                    "headline-lg": ["Playfair Display"],
-                    "display-lg": ["Playfair Display"],
-                    "body-lg": ["Manrope"],
-                    "display-lg-mobile": ["Playfair Display"],
-                    "body-md": ["Manrope"],
-                    "headline-lg-mobile": ["Playfair Display"],
-                    "label-lg": ["Manrope"]
+                "display-lg": ["Playfair Display"],
+                "label-sm": ["Plus Jakarta Sans"],
+                "label-md": ["Plus Jakarta Sans"],
+                "headline-lg": ["Playfair Display"],
+                "body-lg": ["Plus Jakarta Sans"],
+                "headline-lg-mobile": ["Playfair Display"],
+                "body-md": ["Plus Jakarta Sans"]
+            },
+            "fontSize": {
+                "display-lg": ["64px", {"lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500"}],
+                "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                "headline-lg": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                "body-lg": ["18px", {"lineHeight": "28px", "letterSpacing": "0", "fontWeight": "400"}],
+                "headline-lg-mobile": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                "body-md": ["16px", {"lineHeight": "24px", "letterSpacing": "0", "fontWeight": "400"}]
             }
-          },
-        },
+          }
+        }
       }
     </script>
 <style>
-      .glass {
-        background: rgba(255, 255, 255, 0.7);
-        backdrop-filter: blur(20px);
-        -webkit-backdrop-filter: blur(20px);
-      }
-      .reveal {
-        opacity: 0;
-        transform: translateY(30px);
-        transition: all 0.8s ease-out;
-      }
-      .reveal.active {
-        opacity: 1;
-        transform: translateY(0);
-      }
-      .material-symbols-outlined {
-        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-      }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        
+        .glass-nav {
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+        @keyframes infiniteScroll {
+            from { transform: translateX(0); }
+            to { transform: translateX(-50%); }
+        }
+        .animate-infinite-scroll {
+            animation: infiniteScroll 40s linear infinite;
+        }
+        .animate-infinite-scroll:hover {
+            animation-play-state: paused;
+        }
+
+        .masonry-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            grid-auto-rows: 200px;
+            gap: 24px;
+        }
+        .masonry-item-tall { grid-row: span 2; }
     </style>
 </head>
-<body class="bg-background text-on-surface font-body-md overflow-x-hidden">
-<!-- Top Navigation -->
-<nav class="fixed top-0 w-full z-50 bg-surface/70 dark:bg-surface-container/70 backdrop-blur-md border-b border-outline-variant/5">
-<div class="flex justify-between items-center px-gutter py-4 max-w-container-max-width mx-auto">
-<a class="font-headline-md text-headline-md font-bold text-primary dark:text-on-surface tracking-tight" href="#">Rathod Hair Art</a>
-<div class="hidden md:flex gap-8 items-center">
-<a class="font-label-lg text-label-lg text-primary dark:text-on-surface border-b-2 border-primary pb-1 transition-all" href="#home">Home</a>
-<a class="font-label-lg text-label-lg text-on-surface-variant hover:text-secondary transition-colors" href="#about">About</a>
-<a class="font-label-lg text-label-lg text-on-surface-variant hover:text-secondary transition-colors" href="#services">Services</a>
-<a class="font-label-lg text-label-lg text-on-surface-variant hover:text-secondary transition-colors" href="#gallery">Gallery</a>
-<a class="font-label-lg text-label-lg text-on-surface-variant hover:text-secondary transition-colors" href="#reviews">Reviews</a>
-</div>
-<button class="hidden md:block bg-primary text-on-primary px-8 py-3 rounded-xl font-label-lg hover:bg-secondary transition-all active:scale-95">
-        Book Now
-      </button>
-<button class="md:hidden text-primary">
-<span class="material-symbols-outlined">menu</span>
-</button>
-</div>
+<body class="bg-background text-on-background font-body-md selection:bg-primary-fixed selection:text-primary overflow-x-hidden">
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-50 bg-white/70 dark:bg-black/70 backdrop-blur-xl border-b border-black/5 dark:border-white/5 transition-all duration-500 h-20 md:h-24" id="main-nav">
+<div class="flex justify-between items-center max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop h-full">
+<a class="font-display-lg text-headline-lg-mobile md:text-headline-lg tracking-tighter text-primary dark:text-on-primary" href="#">
+                RATHOD HAIR ART
+            </a>
+<nav class="hidden md:flex items-center gap-8">
+<a class="font-label-md text-label-md uppercase tracking-widest text-primary border-b-2 border-primary font-bold" href="#home">Home</a>
+<a class="font-label-md text-label-md uppercase tracking-widest text-secondary hover:text-primary transition-colors" href="#services">Services</a>
+<a class="font-label-md text-label-md uppercase tracking-widest text-secondary hover:text-primary transition-colors" href="#looks">Hair Looks</a>
+<a class="font-label-md text-label-md uppercase tracking-widest text-secondary hover:text-primary transition-colors" href="#gallery">Gallery</a>
+<a class="font-label-md text-label-md uppercase tracking-widest text-secondary hover:text-primary transition-colors" href="#reviews">Reviews</a>
+<a class="font-label-md text-label-md uppercase tracking-widest text-secondary hover:text-primary transition-colors" href="#contact">Contact</a>
 </nav>
+<button class="bg-primary text-on-primary px-8 py-4 rounded-full font-label-md text-label-md uppercase tracking-widest hover:opacity-80 transition-all active:scale-95">
+                Book Appointment
+            </button>
+</div>
+</header>
 <!-- Hero Section -->
-<section class="relative h-screen w-full flex items-center justify-center overflow-hidden" id="home">
-<div class="absolute inset-0 z-0">
-<div class="w-full h-full bg-cover bg-center" style="background-image: url('assets/images/hero.jpg')"></div>
-<div class="absolute inset-0 bg-black/40"></div>
-</div>
-<div class="relative z-10 text-center px-gutter max-w-4xl">
-<h1 class="font-display-lg text-display-lg-mobile md:text-display-lg text-white mb-6 leading-tight drop-shadow-lg">The Art of Precision</h1>
-<p class="font-body-lg text-body-lg text-white/90 mb-10 max-w-2xl mx-auto drop-shadow-md">Elevate your grooming experience with surgical precision and artisanal craftsmanship in an environment of quiet luxury.</p>
-<div class="flex flex-col md:flex-row gap-4 justify-center">
-<button class="bg-secondary-container text-on-secondary-container px-10 py-5 rounded-2xl font-label-lg text-lg hover:scale-105 transition-transform shadow-xl flex items-center justify-center gap-2">
-        Book Appointment
-        <span class="material-symbols-outlined">calendar_month</span>
-</button>
-<button class="glass text-primary px-10 py-5 rounded-2xl font-label-lg text-lg border border-white/20 hover:bg-white transition-all shadow-xl">
-        View Services
-      </button>
-</div>
-</div>
-</section>
-<!-- About Section -->
-<section class="py-section-gap-mobile md:py-section-gap-desktop bg-surface-container-lowest px-gutter" id="about">
-<div class="max-w-container-max-width mx-auto grid md:grid-cols-2 gap-16 items-center reveal">
-<div class="relative group">
-<div class="aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl">
-<img alt="Rathod Hair Art salon interior" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="assets/images/interior.jpg"/>
-</div>
-<div class="absolute -bottom-8 -right-8 glass p-8 rounded-2xl shadow-xl hidden md:block">
-<p class="font-headline-md text-headline-md text-secondary leading-none">15+</p>
-<p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest mt-2">Years of Mastery</p>
-</div>
-</div>
-<div class="space-y-8">
+<section class="pt-40 pb-20 md:pt-48 md:pb-32 overflow-hidden min-h-screen flex items-center" id="home" style="background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://lh3.googleusercontent.com/aida/AP1WRLv10fvS37HEMVxNBkAA3ew16gbvEzl4W5y5NxJ5wvdlS86tkGLl0NqrrwEGjVCT0LfCAMYQCFFnCRcf1F0jg5ib_q6U-NII5yB5H5Uqfr26lLl8LI_A6jB8WV5JPppwpMz2-FNbwmGTeHCdJwYbA7sR7NUHUaM2K035C8CJf58grk08CU-jf_8S-ufocpGsMI0IpY2JTEARjgbIQ0ZqERO7vVd67cNsjuGv8ld2-Rf5Msz_cpX7gvIwFmdL'); background-size: cover; background-position: center;">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop grid md:grid-cols-2 gap-16 items-center">
+<div class="space-y-8 text-center text-white items-center flex flex-col">
+<h1 class="font-display-lg text-[48px] md:text-display-lg leading-tight uppercase text-white">
+                    Where Style<br/>Meets Confidence
+                </h1>
+<p class="font-body-lg text-body-lg text-secondary max-w-lg text-white/90 mx-auto">
+                    Experience Jamnagar's premier destination for high-end men's grooming. We combine classical barbering techniques with modern precision.
+                </p>
 <div class="space-y-4">
-<span class="font-label-lg text-label-lg text-secondary tracking-widest uppercase">The Heritage</span>
-<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary">Crafted for the Discerning Individual</h2>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-white" data-weight="fill">check_circle</span>
+<span class="font-label-md text-label-md uppercase tracking-wider">Master Artisans &amp; Stylists</span>
 </div>
-<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
-        At Rathod Hair Art, we believe hair care is both an art form and a sophisticated science. Our studio is designed as a sanctuary of minimalist-premium aesthetics, where every cut is executed with the meticulous detail of a surgeon and the vision of an artist.
-      </p>
-<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
-        We steer clear of traditional salon tropes, opting instead for a high-end editorial experience that prioritizes your comfort and the health of your hair. Our commitment to quiet luxury ensures that every visit is more than an appointment—it's a transformation.
-      </p>
-<div class="pt-6 border-t border-outline-variant/30 flex gap-12">
-<div>
-<p class="font-headline-md text-headline-md text-primary">5k+</p>
-<p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-tighter">Happy Clients</p>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-white" data-weight="fill">check_circle</span>
+<span class="font-label-md text-label-md uppercase tracking-wider">Premium Italian Hair Products</span>
 </div>
-<div>
-<p class="font-headline-md text-headline-md text-primary">100%</p>
-<p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-tighter">Precision Focus</p>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-white" data-weight="fill">check_circle</span>
+<span class="font-label-md text-label-md uppercase tracking-wider">Bespoke Grooming Consultation</span>
 </div>
+</div>
+<div class="flex flex-wrap gap-4 pt-4 justify-center">
+<button class="bg-primary text-on-primary h-14 px-10 rounded-full font-label-md text-label-md uppercase tracking-widest hover:opacity-90 transition-all shadow-lg">Book Appointment</button>
+<a class="bg-white text-primary border border-primary/10 h-14 px-10 rounded-full flex items-center font-label-md text-label-md uppercase tracking-widest hover:bg-surface transition-all shadow-sm" href="https://wa.me/919510835788">WhatsApp</a>
+<a class="bg-transparent text-primary border border-primary h-14 px-10 rounded-full flex items-center font-label-md text-label-md uppercase tracking-widest hover:bg-primary hover:text-white transition-all" href="tel:+919510835788">Call Now</a>
 </div>
 </div>
 </div>
 </section>
 <!-- Services Section -->
-<section class="py-section-gap-mobile md:py-section-gap-desktop bg-surface px-gutter overflow-hidden" id="services">
-<div class="max-w-container-max-width mx-auto">
-<div class="text-center mb-20 reveal">
-<span class="font-label-lg text-label-lg text-secondary tracking-widest uppercase">Curated Menu</span>
-<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary mt-4">Signature Services</h2>
+<section class="py-section-gap bg-surface" id="services">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop text-center mb-16">
+<span class="font-label-md text-label-md uppercase tracking-[0.3em] text-secondary-fixed-dim">Artisanal Services</span>
+<h2 class="font-display-lg text-headline-lg mt-4 uppercase">The Grooming Menu</h2>
 </div>
-<div class="grid md:grid-cols-3 gap-8 reveal">
-<!-- Service Card 1 -->
-<div class="bg-surface-container-lowest p-8 rounded-2xl border border-outline-variant/20 hover:border-secondary transition-all group relative overflow-hidden">
-<div class="h-64 mb-8 rounded-xl overflow-hidden">
-<img alt="Precision haircut being performed" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" src="assets/images/chair.jpg"/>
-</div>
-<h3 class="font-headline-md text-headline-md text-primary mb-4">Precision Haircut</h3>
-<p class="font-body-md text-body-md text-on-surface-variant mb-6">A masterfully tailored cut designed to complement your facial structure and personal style.</p>
-<div class="flex items-center justify-between">
-<span class="font-label-lg text-label-lg text-secondary">FROM $45</span>
-<span class="material-symbols-outlined text-primary group-hover:translate-x-2 transition-transform">arrow_forward</span>
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop grid grid-cols-2 md:grid-cols-4 gap-gutter grid-cols-1 sm:grid-cols-2">
+<!-- Service Cards -->
+<div class="group relative aspect-square overflow-hidden rounded-lg bg-black">
+<img class="absolute inset-0 w-full h-full object-cover opacity-70 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700" data-alt="Close up of a professional barber performing a precision fade haircut using high-end clippers, dramatic side lighting highlighting the texture of the hair, minimalist gray background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXpnQABnkxmRIEAlMmxU5bJbJOkKAHIOLqdsfGahp3lXunaO0XJEtxcWtY_3HJIRYF_NOg2sBxtPQPFODLPbf_YiJeNtZ5Hnt2b8GxS64ttFuRAshqX9l9UNglfHQuIUq0AKiKy888N_quP-wjhKZPjg2EfRZJSLVMFEG0M0VTlj7xTANXJGal23DsGkId6yUc156XSePaGv4rLkVFbieGZWuyWmPp9ZfM4lqZH6xslvVcGiy-uLS77g"/>
+<div class="absolute inset-x-0 bottom-0 p-6 bg-gradient-to-t from-black/80 to-transparent">
+<p class="font-label-md text-label-md text-white uppercase tracking-widest">Hair Cut</p>
 </div>
 </div>
-<!-- Service Card 2 -->
-<div class="bg-surface-container-lowest p-8 rounded-2xl border border-outline-variant/20 hover:border-secondary transition-all group relative overflow-hidden">
-<div class="h-64 mb-8 rounded-xl overflow-hidden">
-<img alt="Client receiving a beard grooming treatment" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" src="assets/images/customer.jpg"/>
-</div>
-<h3 class="font-headline-md text-headline-md text-primary mb-4">Sculpted Beard Trim</h3>
-<p class="font-body-md text-body-md text-on-surface-variant mb-6">Complete beard architecture including hot towel treatment and razor-edge detailing.</p>
-<div class="flex items-center justify-between">
-<span class="font-label-lg text-label-lg text-secondary">FROM $30</span>
-<span class="material-symbols-outlined text-primary group-hover:translate-x-2 transition-transform">arrow_forward</span>
+<div class="group relative aspect-square overflow-hidden rounded-lg bg-black">
+<img class="absolute inset-0 w-full h-full object-cover opacity-70 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700" data-alt="A detailed shot of a beard trim being performed with a traditional straight razor, luxurious shaving cream applied, warm ambient lighting in a high-end salon." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBGijsS4Bume32lxD3JoHIWaDqXab-somqY_Yl9f2k0clMNSZpkumPYpHlpca7JuG-G8YwCu8HPblDrMF7zdHzXo8qe9pzn0mPcXjlwfHhDjdubx1r6jTUwH7W6jrULhs2T5PSEaiUKrcdyUiwgtGKIemL6JtlZreyqqM5piQLDf7y8xDsYE1wXlTAez9fj5H7jWMaFtNcnYLth3rnXfRKinQlMsE-PTKCH-M7Kg89maqKiJCm895GANw"/>
+<div class="absolute inset-x-0 bottom-0 p-6 bg-gradient-to-t from-black/80 to-transparent">
+<p class="font-label-md text-label-md text-white uppercase tracking-widest">Beard Trim</p>
 </div>
 </div>
-<!-- Service Card 3 -->
-<div class="bg-surface-container-lowest p-8 rounded-2xl border border-outline-variant/20 hover:border-secondary transition-all group relative overflow-hidden">
-<div class="h-64 mb-8 rounded-xl overflow-hidden">
-<img alt="Premium hair styling products" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" src="assets/images/products.jpg"/>
+<div class="group relative aspect-square overflow-hidden rounded-lg bg-black">
+<img class="absolute inset-0 w-full h-full object-cover opacity-70 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700" data-alt="Man receiving a relaxing hair spa treatment with professional hair masks and steam, serene spa environment, soft focus, high-end grooming aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBp1QEfk_stBb5VhIcX6eUhxCqGuEOgPuGCF1QV8qMgwFPalE-3DVB58o4GwzpGGLUEb1kjGmI89qOQDBgNAyGsgIgiVXB7DILmVWVwiRhjTIPvnqFfEUEjcw9_Hb_BRakixItFXaI5PUjrTGKMLnlJtAOU6PBxJdaK4Buw5JGSE5wCAX4iZ5USGKwMyDb6CClOy9F3dLaW7Csjcc3FjLB0jD3mb6LnAmHgGlIyPRRc4HnlGEX1Z7fP-A"/>
+<div class="absolute inset-x-0 bottom-0 p-6 bg-gradient-to-t from-black/80 to-transparent">
+<p class="font-label-md text-label-md text-white uppercase tracking-widest">Hair Spa</p>
 </div>
-<h3 class="font-headline-md text-headline-md text-primary mb-4">Artistic Styling</h3>
-<p class="font-body-md text-body-md text-on-surface-variant mb-6">Editorial-grade styling using world-class products for special occasions or daily elegance.</p>
-<div class="flex items-center justify-between">
-<span class="font-label-lg text-label-lg text-secondary">FROM $25</span>
-<span class="material-symbols-outlined text-primary group-hover:translate-x-2 transition-transform">arrow_forward</span>
 </div>
+<div class="group relative aspect-square overflow-hidden rounded-lg bg-black">
+<img class="absolute inset-0 w-full h-full object-cover opacity-70 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700" data-alt="Professional hair coloring process for men, highlighting modern techniques, subtle tonal shifts, clean studio lighting, focus on hair texture." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBoKWmVFOhaQbHkRcX70BVXvdcK-kV23c--4TA5punjWl0BZU8_ALzZxq9fbJr-lPEJStzVBgdlLd0DBXbdz5060BPc61OKFJoXyFbZLfsMvc9G2KJeC9SuvefLcR1OZkyuKHE_Jcy_m3HhWdcxcv_dz3GNVbZek9YISMPEJ-ZREGgwSDyLm2LaVrqQ4Mm_b1M8Z34WWMfrUpTx-BTtNCPaNxI0gbN5RrFwF_reEVEGOmUNOCXGlIygFw"/>
+<div class="absolute inset-x-0 bottom-0 p-6 bg-gradient-to-t from-black/80 to-transparent">
+<p class="font-label-md text-label-md text-white uppercase tracking-widest">Hair Color</p>
+</div>
+</div>
+<div class="group relative aspect-square overflow-hidden rounded-lg bg-black">
+<img class="absolute inset-0 w-full h-full object-cover opacity-70 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700" data-alt="Men's keratin treatment session, smooth and sleek hair result, professional styling tools in view, minimalist high-end salon background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAv4XUTa_syHbddxHniZvcbgZAnfP7gRHmz7NvqPiJDyxzLnJXnTXIFB4rC0l83M6dTaCR_ZenACGyNHB28VyaGOMVNrXmp-qax46Qd_lBf4q0m5IMI2ng4eXjZbgaFV9nKKTwAn_cVcxzNeTem5KQxxASNoJh2aJhFjw7uNRlRBMJsBPMAxLj-II1fL4eRfW5b83GNuE4wFaR6LPe7f-_tqik67K7gds4LQSi-TweRxk-rojbMgG4UUw"/>
+<div class="absolute inset-x-0 bottom-0 p-6 bg-gradient-to-t from-black/80 to-transparent">
+<p class="font-label-md text-label-md text-white uppercase tracking-widest">Keratin</p>
+</div>
+</div>
+<div class="group relative aspect-square overflow-hidden rounded-lg bg-black">
+<img class="absolute inset-0 w-full h-full object-cover opacity-70 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700" data-alt="Deep cleansing facial for men using premium charcoal mask, steam in the air, relaxed client, macro photography of skin texture and professional application." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDaDtgthJ6qYbcon0uRFCkZqZUGgMBh_lBVCth1KszxT7_fA-ydLp4_NpWkzPut6K2ypWvxSwRIN8Q-w80ppuncY-G1kWvC5BuSr8ueE7yJJXD3xmcKk53BWG7xD4cPI7qpnxfX-53ykxnghxKOMjjL2gIaV3xYRSVut7fWoYzS6jIxOsw9fsSLjccmQ100aLQh0ym8TVrS_bPIy832V2MkPMNew1mQMd4IPO4E9rTTqsOev5SAESsjqw"/>
+<div class="absolute inset-x-0 bottom-0 p-6 bg-gradient-to-t from-black/80 to-transparent">
+<p class="font-label-md text-label-md text-white uppercase tracking-widest">Facial</p>
+</div>
+</div>
+<div class="group relative aspect-square overflow-hidden rounded-lg bg-black">
+<img class="absolute inset-0 w-full h-full object-cover opacity-70 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700" data-alt="Traditional hot towel shave in progress, thick white foam, vintage straight razor, classic barber shop chair and ambiance, cinematic lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCYGy3Z8Xa9OekdczGo91UB_VXgKvZXQKfASc_ZYN-MHWoD_t1NGMwyOw29PIDlrt16GQkGoJfaVwPqhSI32gYZ3b7n_ORpW3EZeMCQODvDqO3f7K2sBLwx9fjn31veuUgTqJFk60JXxY-aP7NfMNoWgcB9_wiy8W0S1Il-DdLHjPp-jOYqcXKhC2GDbiA4KFZ-cekG_lGzjPCbZGbhVA0VnmGcMqEcHsXSJJtZyn-2ILyg63l7U4hm6w"/>
+<div class="absolute inset-x-0 bottom-0 p-6 bg-gradient-to-t from-black/80 to-transparent">
+<p class="font-label-md text-label-md text-white uppercase tracking-widest">Shaving</p>
+</div>
+</div>
+<div class="group relative aspect-square overflow-hidden rounded-lg bg-black">
+<img class="absolute inset-0 w-full h-full object-cover opacity-70 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700" data-alt="Invigorating head massage with scalp oils, hands of a professional therapist, calm environment, warm lighting, luxury wellness focus." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDyYyVgBVFPMpG6YDJBlocGjZIfn28iKZ4X6GB5k4u03agMoebT9L1JD5Ezhn3BCnq6IdQj-CE1TLsOOWxxniai3lxh9EJFKxtXixV_9a5qS_HfkqM2f4mWvxFe-UcsZOPp56L9dmBcPENUHvXj7FNEEoxEnEYClkdfMcAAG8SMeHk8GTfzFiqIUne3OPZ2jsnjVoi0iwQLscgQBEuNVUBvSE5O17W4cO_spq1PULDeSrArlMuOXzCvmQ"/>
+<div class="absolute inset-x-0 bottom-0 p-6 bg-gradient-to-t from-black/80 to-transparent">
+<p class="font-label-md text-label-md text-white uppercase tracking-widest">Head Massage</p>
 </div>
 </div>
 </div>
 </section>
-<!-- Gallery Section (Masonry) -->
-<section class="py-section-gap-mobile md:py-section-gap-desktop bg-surface-container-lowest px-gutter" id="gallery">
-<div class="max-w-container-max-width mx-auto">
-<div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6 reveal">
-<div class="max-w-xl">
-<span class="font-label-lg text-label-lg text-secondary tracking-widest uppercase">The Exhibit</span>
-<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary mt-4">Visual Masterpieces</h2>
+<!-- Stats Section -->
+<section class="py-24 border-y border-outline-variant bg-white">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop grid grid-cols-2 md:grid-cols-4 gap-12 text-center grid-cols-1 sm:grid-cols-2">
+<div class="space-y-2">
+<h3 class="font-display-lg text-display-lg" data-target="5">5</h3>
+<p class="font-label-md text-label-md uppercase tracking-[0.2em] text-secondary">Years of Craft</p>
 </div>
-<button class="font-label-lg text-label-lg text-primary border-b border-primary hover:text-secondary hover:border-secondary transition-colors pb-1">VIEW ALL WORK</button>
+<div class="space-y-2">
+<h3 class="font-display-lg text-display-lg" data-target="5000">5000+</h3>
+<p class="font-label-md text-label-md uppercase tracking-[0.2em] text-secondary">Happy Clients</p>
 </div>
-<div class="columns-1 md:columns-3 gap-6 space-y-6 reveal">
-<div class="rounded-2xl overflow-hidden group relative">
-<img alt="Client with a modern haircut" class="w-full h-auto transition-transform duration-500 group-hover:scale-105" src="assets/images/customer.jpg"/>
+<div class="space-y-2">
+<h3 class="font-display-lg text-display-lg" data-target="15">15</h3>
+<p class="font-label-md text-label-md uppercase tracking-[0.2em] text-secondary">Master Stylists</p>
 </div>
-<div class="rounded-2xl overflow-hidden group relative">
-<img alt="Professional hair cutting tools" class="w-full h-auto transition-transform duration-500 group-hover:scale-105" src="assets/images/products.jpg"/>
+<div class="space-y-2">
+<h3 class="font-display-lg text-display-lg" data-target="1000">1000+</h3>
+<p class="font-label-md text-label-md uppercase tracking-[0.2em] text-secondary">Five Star Looks</p>
 </div>
-<div class="rounded-2xl overflow-hidden group relative">
-<img alt="Salon interior during business hours" class="w-full h-auto transition-transform duration-500 group-hover:scale-105" src="assets/images/shop.jpg"/>
 </div>
-<div class="rounded-2xl overflow-hidden group relative">
-<img alt="Precision trim with straight razor" class="w-full h-auto transition-transform duration-500 group-hover:scale-105" src="assets/images/chair.jpg"/>
+</section>
+<!-- Try Your Look Carousel -->
+<section class="py-section-gap overflow-hidden bg-white" id="looks">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop flex justify-between items-end mb-16">
+<div>
+<span class="font-label-md text-label-md uppercase tracking-[0.3em] text-secondary-fixed-dim">Style Catalog</span>
+<h2 class="font-display-lg text-headline-lg mt-4 uppercase">Try Your Look</h2>
 </div>
-<div class="rounded-2xl overflow-hidden group relative">
-<img alt="Satisfied customer viewing new haircut" class="w-full h-auto transition-transform duration-500 group-hover:scale-105" src="assets/images/customer.jpg"/>
+<div class="flex gap-4">
+<button class="w-12 h-12 rounded-full border border-primary flex items-center justify-center hover:bg-primary hover:text-white transition-all"><span class="material-symbols-outlined">arrow_back</span></button>
+<button class="w-12 h-12 rounded-full border border-primary flex items-center justify-center hover:bg-primary hover:text-white transition-all"><span class="material-symbols-outlined">arrow_forward</span></button>
 </div>
-<div class="rounded-2xl overflow-hidden group relative">
-<img alt="Luxury styling wax application" class="w-full h-auto transition-transform duration-500 group-hover:scale-105" src="assets/images/products.jpg"/>
 </div>
+<div class="flex animate-infinite-scroll hover:pause whitespace-nowrap gap-gutter">
+<!-- Carousel Items -->
+<div class="inline-block w-80 group">
+<div class="aspect-square rounded-lg overflow-hidden mb-4">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDB1OkkFcS1CUgjDcF7hyfvhVuxWprWpLo5gJFTp4zkY7VDMcwf5KczlJYv4CJuMsIY3duVdIf4Y5mpEEQu28Op-7aVCqoa70Djafh1R27dfMO2aJEn4wSwEKI34VXGmknKs0N2UlMhwKwywWD-PG3M20cc4himaBalQ7zJ8ev0YjImjBOM77F2H4cNBZhU28nuc_QBa_7a4urKAu647iFaQxzmLzlJxRwoR-l_DF5gCdHS9fb2zhWyXA"/>
+</div>
+<h4 class="font-label-md text-label-md uppercase tracking-widest text-center">Textured Crop</h4>
+</div>
+<div class="inline-block w-80 group">
+<div class="aspect-square rounded-lg overflow-hidden mb-4">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCoLhnfaVQlW9IXqi-Tp04gMiXu59bTVEZs_86XiAYYTt1hf1tv2iNQNjJx0qhDElFeGS0-ze9TFmYOiYrT15w35337Dcd86GzlfORsm0vn4yi4QA2GoA4KnB4L9PHVxuj9HizxJAIMn0RAey3IiRO-ujRPLJHY46v_JDUhwdQcxhrpFBGsvrCoYP-h5v8dxy-J94gCUXY4Ndq_pyC7vg2iB01wy0qWhCMwDDYqCUcTaabxREnXcvGSrw"/>
+</div>
+<h4 class="font-label-md text-label-md uppercase tracking-widest text-center">Pompadour</h4>
+</div>
+<div class="inline-block w-80 group">
+<div class="aspect-square rounded-lg overflow-hidden mb-4">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDOT0Pf5qRluKORz7f1zDBC_K7VpndnuOEmgcv3nx2TMzRYr9Sb1uVFklQAy1ygg8Uj6MtcGsWsJR2lPsSCC3Ce6rj8N-Qh47o0H8xwuDRuTVC7ejQ2l7v35zEzh0XOFLD58rtHzg_XsNbdLlorLUFcibwDABZI3ReWHKk8l5LWGtufsxQZDY0xUZ5Z9HUt8MRrHB13rkdlQKOEBh9pwoGyNa8ML2_-BdoS7Xw4cfxXybnwcnX_j6PGLA"/>
+</div>
+<h4 class="font-label-md text-label-md uppercase tracking-widest text-center">Slick Back</h4>
+</div>
+<div class="inline-block w-80 group">
+<div class="aspect-square rounded-lg overflow-hidden mb-4">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA-qKAEidyNWTfCkytinckor_q6Y4xhxgKSNywXkgoJCSvlMy5DbHDwyd-FBg7ts71J6A-zIKKVULKBkVxKYoAGLUnhyLdeZxmtEi7O6Dy6y4Eu7JjjuTC17c8YlgRreWlw_qjiqmuTGCv31TMghfnAbke7PzgzhuN-a-Irrag8E4STfx-A2zPOdYn68762AQsWB-ByAMFF2LBCqQBbtEZjSNU9uSWvAuOHHShK26Q_0d2eFvr4AtL8oQ"/>
+</div>
+<h4 class="font-label-md text-label-md uppercase tracking-widest text-center">Modern Fade</h4>
+</div>
+<!-- Duplicates for infinite scroll -->
+<div class="inline-block w-80 group">
+<div class="aspect-square rounded-lg overflow-hidden mb-4">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDB1OkkFcS1CUgjDcF7hyfvhVuxWprWpLo5gJFTp4zkY7VDMcwf5KczlJYv4CJuMsIY3duVdIf4Y5mpEEQu28Op-7aVCqoa70Djafh1R27dfMO2aJEn4wSwEKI34VXGmknKs0N2UlMhwKwywWD-PG3M20cc4himaBalQ7zJ8ev0YjImjBOM77F2H4cNBZhU28nuc_QBa_7a4urKAu647iFaQxzmLzlJxRwoR-l_DF5gCdHS9fb2zhWyXA"/>
+</div>
+<h4 class="font-label-md text-label-md uppercase tracking-widest text-center">Textured Crop</h4>
+</div>
+<div class="inline-block w-80 group">
+<div class="aspect-square rounded-lg overflow-hidden mb-4">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCoLhnfaVQlW9IXqi-Tp04gMiXu59bTVEZs_86XiAYYTt1hf1tv2iNQNjJx0qhDElFeGS0-ze9TFmYOiYrT15w35337Dcd86GzlfORsm0vn4yi4QA2GoA4KnB4L9PHVxuj9HizxJAIMn0RAey3IiRO-ujRPLJHY46v_JDUhwdQcxhrpFBGsvrCoYP-h5v8dxy-J94gCUXY4Ndq_pyC7vg2iB01wy0qWhCMwDDYqCUcTaabxREnXcvGSrw"/>
+</div>
+<h4 class="font-label-md text-label-md uppercase tracking-widest text-center">Pompadour</h4>
+</div>
+<div class="inline-block w-80 group">
+<div class="aspect-square rounded-lg overflow-hidden mb-4">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDOT0Pf5qRluKORz7f1zDBC_K7VpndnuOEmgcv3nx2TMzRYr9Sb1uVFklQAy1ygg8Uj6MtcGsWsJR2lPsSCC3Ce6rj8N-Qh47o0H8xwuDRuTVC7ejQ2l7v35zEzh0XOFLD58rtHzg_XsNbdLlorLUFcibwDABZI3ReWHKk8l5LWGtufsxQZDY0xUZ5Z9HUt8MRrHB13rkdlQKOEBh9pwoGyNa8ML2_-BdoS7Xw4cfxXybnwcnX_j6PGLA"/>
+</div>
+<h4 class="font-label-md text-label-md uppercase tracking-widest text-center">Slick Back</h4>
+</div>
+<div class="inline-block w-80 group">
+<div class="aspect-square rounded-lg overflow-hidden mb-4">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA-qKAEidyNWTfCkytinckor_q6Y4xhxgKSNywXkgoJCSvlMy5DbHDwyd-FBg7ts71J6A-zIKKVULKBkVxKYoAGLUnhyLdeZxmtEi7O6Dy6y4Eu7JjjuTC17c8YlgRreWlw_qjiqmuTGCv31TMghfnAbke7PzgzhuN-a-Irrag8E4STfx-A2zPOdYn68762AQsWB-ByAMFF2LBCqQBbtEZjSNU9uSWvAuOHHShK26Q_0d2eFvr4AtL8oQ"/>
+</div>
+<h4 class="font-label-md text-label-md uppercase tracking-widest text-center">Modern Fade</h4>
+</div>
+</div>
+<div class="flex justify-center mt-16">
+<button class="font-label-md text-label-md uppercase tracking-[0.3em] border-b-2 border-primary pb-2 hover:opacity-60 transition-all">View All 1000+ Looks</button>
+</div>
+</section>
+<!-- Instagram Reels Grid -->
+<section class="py-section-gap bg-surface-container">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop text-center mb-16">
+<span class="font-label-md text-label-md uppercase tracking-[0.3em] text-secondary">Follow Our Story</span>
+<h2 class="font-display-lg text-headline-lg mt-4 uppercase">From The Chair</h2>
+</div>
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop grid grid-cols-2 md:grid-cols-4 gap-gutter">
+<!-- Reel Placeholder -->
+<div class="aspect-[9/16] bg-black rounded-lg relative group overflow-hidden cursor-pointer">
+<div class="absolute inset-0 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-5xl opacity-80 group-hover:scale-110 transition-transform">play_circle</span>
+</div>
+<div class="absolute bottom-4 left-4 flex items-center gap-2 text-white/90">
+<span class="material-symbols-outlined text-sm">visibility</span>
+<span class="text-xs font-label-sm">12.4k Views</span>
+</div>
+</div>
+<div class="aspect-[9/16] bg-black rounded-lg relative group overflow-hidden cursor-pointer">
+<div class="absolute inset-0 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-5xl opacity-80 group-hover:scale-110 transition-transform">play_circle</span>
+</div>
+<div class="absolute bottom-4 left-4 flex items-center gap-2 text-white/90">
+<span class="material-symbols-outlined text-sm">visibility</span>
+<span class="text-xs font-label-sm">8.1k Views</span>
+</div>
+</div>
+<div class="aspect-[9/16] bg-black rounded-lg relative group overflow-hidden cursor-pointer">
+<div class="absolute inset-0 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-5xl opacity-80 group-hover:scale-110 transition-transform">play_circle</span>
+</div>
+<div class="absolute bottom-4 left-4 flex items-center gap-2 text-white/90">
+<span class="material-symbols-outlined text-sm">visibility</span>
+<span class="text-xs font-label-sm">24.5k Views</span>
+</div>
+</div>
+<div class="aspect-[9/16] bg-black rounded-lg relative group overflow-hidden cursor-pointer">
+<div class="absolute inset-0 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-5xl opacity-80 group-hover:scale-110 transition-transform">play_circle</span>
+</div>
+<div class="absolute bottom-4 left-4 flex items-center gap-2 text-white/90">
+<span class="material-symbols-outlined text-sm">visibility</span>
+<span class="text-xs font-label-sm">15.9k Views</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Gallery Section -->
+<section class="py-section-gap" id="gallery">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop masonry-grid">
+<div class="masonry-item-tall overflow-hidden rounded-xl bg-surface">
+<img class="w-full h-full object-cover" data-alt="A wide angle shot of Rathod Hair Art salon interior featuring minimalist architectural design, large circular mirrors with integrated backlighting, and sleek black barber chairs. The floor is white polished marble, creating a bright, spacious, and ultra-luxurious feel." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAkcoKQkcnKnExewUTj1s5jxVz-dZx37-WbY9qtJPYMTKeDybNKOAWsDmvGK2R30rwxU-9efluYCncXkFsgk4ylsb_z3gbHLme1gGsH1CVhGCOt4zfnVnWf90UBwa7GGLGe2P1msD9HO4X59Ic7njRfU_-x8EzXx6JdnF_Oi6Qy0qq8h2tQOkvI69P_cB9yXQhK9gHQF1aIuZxQsxXMu1FMlFhSXyQLdTJDEbmw5WpoHvv2JCoJYOvPGw"/>
+</div>
+<div class="overflow-hidden rounded-xl bg-surface">
+<img class="w-full h-full object-cover" data-alt="Close up of high-end barbering tools including professional clippers, straight razors, and brushes neatly arranged on a white marble countertop. Focus is sharp on the metallic textures, minimalist aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBkvV3dYd5yARF7STbScqUY-4nDL9DOFjO_ql32Kl9lpduaE55fsOdJyyLOjx-J-Vi2JrlFitYNAwo6t_QPK8lwtmdIY36EXf1mMidZXGP5Ane4RMw_kMUbti96FLaB8FPYedq3wh04vtPojLL-5CRNILtgkqRY6rSRnWIKKOlPHXfC6Q7KvQWLqeIANXrQ0rACKGv2nlm_RB2JKCA1aEANNKHREBpHPdTf_psbz08ygGV69i7gbPAroQ"/>
+</div>
+<div class="masonry-item-tall overflow-hidden rounded-xl bg-surface">
+<img class="w-full h-full object-cover" data-alt="A macro shot of premium men's hair styling products from Italy, elegant black and white packaging, sitting on a glass shelf with soft bokeh lighting in the background of a luxury salon." src="https://lh3.googleusercontent.com/aida-public/AB6AXuChl7J_H7POJSgnK1-aXkeX-gwBGcNF5LYf-ElhS2q1r0cviRdFfWoKmiWCU-83lHiidmVPpamgGMcS_s60OzCJq1RC9XDSUbB463gQ0kqQbFrNmeMer85MyggVXa5m3MnwuzTZqrCsHhHHs7g-3DvaD0Fk410SWLJA4GUH2MKjL00IBGaOpR5IVpJmgAcuWpfS3mlw0vlr7Ep06Pefog4VDausmuUlVFSlD4K3Kwd6brvgruJhLM5Olg"/>
+</div>
+<div class="overflow-hidden rounded-xl bg-surface">
+<img class="w-full h-full object-cover" data-alt="Professional stylist at Rathod Hair Art carefully consulting with a client, pointing at a style catalog on a tablet, modern high-end grooming environment, soft cinematic lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBeVBo-UjIvaV_u2kGcMxMKpcjcLljTsmJMsXEyoLzBGX2oF2ov0xDRyjBjivFHoP2AenZlVxfcqB9HOjbGl3QXQkDFZ-YX1t65fK4ZpGO6o2K9swOYGUwjomzRJy9ixl5Y1CfWKus6uVghCoCcR6WjfsQTbLmjQ5f2s9R4dLMKSYvtqAy9l5jfXsLG36DmRFXH_THP78uTGVkJCXUuGwcQr1yp5iVmcpDBdrn_8wYXqGLwLKUsRNTQnw"/>
 </div>
 </div>
 </section>
 <!-- Reviews Section -->
-<section class="py-section-gap-mobile md:py-section-gap-desktop bg-primary text-on-primary overflow-hidden relative" id="reviews">
-<div class="absolute top-0 right-0 w-96 h-96 bg-secondary/10 rounded-full blur-[120px] -mr-48 -mt-48"></div>
-<div class="absolute bottom-0 left-0 w-96 h-96 bg-secondary/10 rounded-full blur-[120px] -ml-48 -mb-48"></div>
-<div class="max-w-container-max-width mx-auto px-gutter text-center relative z-10 reveal">
-<div class="inline-flex items-center gap-2 mb-8 bg-white/10 px-6 py-2 rounded-full border border-white/10">
-<span class="material-symbols-outlined text-secondary-fixed-dim" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined text-secondary-fixed-dim" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined text-secondary-fixed-dim" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined text-secondary-fixed-dim" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined text-secondary-fixed-dim" style="font-variation-settings: 'FILL' 1;">star</span>
+<section class="py-section-gap bg-primary text-on-primary" id="reviews">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop text-center mb-16">
+<span class="font-label-md text-label-md uppercase tracking-[0.3em] text-on-primary/60">Testimonials</span>
+<h2 class="font-display-lg text-headline-lg mt-4 uppercase">Voice of Excellence</h2>
 </div>
-<h2 class="font-display-lg text-display-lg-mobile md:text-display-lg mb-12">The Verdict of Elegance</h2>
-<div class="grid md:grid-cols-2 gap-16 items-center text-left">
-<div class="space-y-12">
-<div class="space-y-4 border-l-2 border-secondary pl-8">
-<p class="font-headline-md text-headline-md text-white">"The precision is unlike anything I've experienced. Truly a Tesla-standard for hair."</p>
-<cite class="font-label-lg text-label-lg text-white/60 block not-italic">— JULIAN V., REGULAR CLIENT</cite>
+<div class="max-w-3xl mx-auto px-margin-mobile overflow-hidden relative" id="review-carousel">
+<div class="flex transition-transform duration-700 ease-in-out" id="review-track" style="transform: translateX(0%);">
+<!-- Review Card 1 -->
+<div class="w-full flex-shrink-0 text-center px-4">
+<div class="flex justify-center gap-1 mb-8">
+<span class="material-symbols-outlined text-yellow-400" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-yellow-400" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-yellow-400" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-yellow-400" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-yellow-400" style="font-variation-settings: 'FILL' 1;">star</span>
 </div>
-<div class="space-y-4 border-l-2 border-secondary pl-8 opacity-60">
-<p class="font-headline-md text-headline-md text-white">"A sanctuary of calm and mastery. I wouldn't trust anyone else with my grooming."</p>
-<cite class="font-label-lg text-label-lg text-white/60 block not-italic">— MARCUS D., ENTREPRENEUR</cite>
+<p class="font-display-lg text-2xl md:text-3xl italic leading-relaxed mb-8">
+                        "The best grooming experience I've had in Jamnagar. The attention to detail at Rathod Hair Art is unmatched. Truly precision crafted."
+                    </p>
+<div class="font-label-md text-label-md uppercase tracking-widest text-on-primary/70">Aniket Sharma</div>
 </div>
+<!-- Review Card 2 -->
+<div class="w-full flex-shrink-0 text-center px-4">
+<div class="flex justify-center gap-1 mb-8">
+<span class="material-symbols-outlined text-yellow-400" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-yellow-400" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-yellow-400" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-yellow-400" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-yellow-400" style="font-variation-settings: 'FILL' 1;">star</span>
 </div>
-<div class="bg-white/5 backdrop-blur-md p-12 rounded-3xl border border-white/10 text-center">
-<p class="font-label-sm text-label-sm text-secondary uppercase tracking-[0.3em] mb-4">Verified Experience</p>
-<div class="font-display-lg text-8xl md:text-9xl mb-2">5.0</div>
-<p class="font-headline-md text-headline-md text-white mb-8">Google Rating</p>
-<div class="h-px bg-white/20 w-1/2 mx-auto mb-8"></div>
-<p class="font-body-lg text-body-lg text-white/70">Based on 19 authentic client reviews across all platforms.</p>
+<p class="font-display-lg text-2xl md:text-3xl italic leading-relaxed mb-8">
+                        "Master stylists who actually understand modern hair trends. The salon vibe is sophisticated and the service is exceptional."
+                    </p>
+<div class="font-label-md text-label-md uppercase tracking-widest text-on-primary/70">Rajesh Varma</div>
 </div>
 </div>
 </div>
 </section>
-<!-- Floating CTAs -->
-<div class="fixed right-6 bottom-32 flex flex-col gap-4 z-40 md:right-10 md:bottom-10">
-<a class="w-14 h-14 md:w-16 md:h-16 bg-[#25D366] text-white rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-transform active:scale-95" href="https://wa.me/#">
-<span class="material-symbols-outlined text-3xl">chat</span>
-</a>
-<a class="w-14 h-14 md:w-16 md:h-16 bg-primary text-white rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-transform active:scale-95" href="tel:#">
-<span class="material-symbols-outlined text-3xl">call</span>
-</a>
+<!-- CTA Section -->
+<section class="relative py-section-gap overflow-hidden flex items-center justify-center text-center">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover opacity-10" data-alt="A dark and moody artistic shot of hair clippers cutting through dark hair with dust particles catching the light, highly cinematic, representing the precision and art of barbering." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAPfsCuOapoy8JEMcnmjAfYcVTWcZ6PP2L3ryUf5SXQ3aAJUf8SjX__Otpbx3n_gvVzGX8vDbfbw9dU2-CY0upDum3kMs8nhnNFKcJOf4ahdv1K1gbix59XSl9XlNmOy4IYAKKOmAWI0vyIza6w_BG_JqkgLyGazdQUPfPgFXZmvj0ak5nSocMIB0VU5iioKARWkR5vynVfpCiy67ZIo_yDPq6r2jeVwjiycs0qvbmx0Tzf2LO20QnTnQ"/>
 </div>
-<!-- Bottom Booking Bar (Mobile Only) -->
-<div class="fixed bottom-0 left-0 w-full z-50 md:hidden glass p-4 border-t border-outline-variant/10 flex justify-around items-center shadow-lg">
-<a class="flex flex-col items-center justify-center text-on-surface-variant font-label-sm text-label-sm active:scale-95 transition-transform" href="tel:#">
-<span class="material-symbols-outlined mb-1">call</span>
-        Call
-      </a>
-<a class="flex flex-col items-center justify-center text-on-surface-variant font-label-sm text-label-sm active:scale-95 transition-transform" href="https://wa.me/#">
-<span class="material-symbols-outlined mb-1">chat</span>
-        WhatsApp
-      </a>
-<button class="bg-primary text-on-primary px-8 py-3 rounded-xl font-label-lg flex items-center justify-center gap-2 shadow-xl active:scale-95 transition-transform">
-<span class="material-symbols-outlined">calendar_month</span>
-        Book Now
-      </button>
+<div class="relative z-10 max-w-4xl px-margin-mobile">
+<h2 class="font-display-lg text-[40px] md:text-6xl mb-8 uppercase tracking-tight">Ready for a Fresh<br/>New Look?</h2>
+<div class="flex flex-wrap justify-center gap-6">
+<a class="bg-primary text-on-primary h-16 px-12 rounded-full flex items-center font-label-md text-label-md uppercase tracking-widest hover:scale-105 transition-all" href="https://wa.me/919510835788">Book via WhatsApp</a>
+<a class="bg-white text-primary border border-primary h-16 px-12 rounded-full flex items-center font-label-md text-label-md uppercase tracking-widest hover:bg-primary hover:text-white transition-all" href="tel:+919510835788">Call +91 95108 35788</a>
 </div>
+</div>
+</section>
 <!-- Footer -->
-<footer class="bg-surface-container-lowest dark:bg-surface-container-lowest border-t border-outline-variant">
-<div class="max-w-container-max-width mx-auto px-gutter py-section-gap-mobile md:py-section-gap-desktop flex flex-col md:flex-row justify-between gap-12">
-<div class="space-y-6 max-w-sm">
-<h3 class="font-headline-md text-headline-md font-bold text-primary">Rathod Hair Art</h3>
-<p class="font-body-md text-body-md text-on-surface-variant">Defining the standard of grooming through artisanal craft and technological precision since 2009.</p>
+<footer class="bg-primary dark:bg-tertiary-container text-on-primary py-section-gap rounded-t-lg" id="contact">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop grid md:grid-cols-3 gap-16 mb-20">
+<div class="space-y-8">
+<h2 class="font-display-lg text-headline-lg text-on-primary">RATHOD<br/>HAIR ART</h2>
+<p class="font-body-md opacity-70">Elevating men's grooming in Jamnagar through precision, luxury, and artistic mastery.</p>
 <div class="flex gap-4">
-<a class="w-10 h-10 rounded-full border border-outline flex items-center justify-center hover:bg-primary hover:text-white transition-all" href="#"><span class="material-symbols-outlined text-lg">public</span></a>
-<a class="w-10 h-10 rounded-full border border-outline flex items-center justify-center hover:bg-primary hover:text-white transition-all" href="#"><span class="material-symbols-outlined text-lg">photo_camera</span></a>
+<a class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-white hover:text-black transition-all" href="#">FB</a>
+<a class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-white hover:text-black transition-all" href="#">IG</a>
+<a class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-white hover:text-black transition-all" href="#">TW</a>
 </div>
 </div>
-<div class="grid grid-cols-2 md:grid-cols-3 gap-12">
-<div class="space-y-4">
-<p class="font-label-lg text-label-lg text-primary uppercase">Studio</p>
-<ul class="space-y-2 font-body-md text-body-md text-on-surface-variant">
-<li><a class="hover:text-secondary transition-colors" href="#about">Our Story</a></li>
-<li><a class="hover:text-secondary transition-colors" href="#gallery">The Exhibit</a></li>
-<li><a class="hover:text-secondary transition-colors" href="#reviews">Client Journal</a></li>
-</ul>
+<div class="space-y-8">
+<h3 class="font-label-md text-label-md uppercase tracking-widest">Contact Information</h3>
+<div class="space-y-4 font-body-md opacity-70">
+<p class="">Opp. Krishna Park, Jamnagar, Gujarat - 361001</p>
+<p class="">+91 95108 35788</p>
+<p class="">rathodhairart@gmail.com</p>
 </div>
-<div class="space-y-4">
-<p class="font-label-lg text-label-lg text-primary uppercase">Services</p>
-<ul class="space-y-2 font-body-md text-body-md text-on-surface-variant">
-<li><a class="hover:text-secondary transition-colors" href="#">Hair Design</a></li>
-<li><a class="hover:text-secondary transition-colors" href="#">Beard Sculpting</a></li>
-<li><a class="hover:text-secondary transition-colors" href="#">Elite Treatments</a></li>
-</ul>
 </div>
-<div class="space-y-4 col-span-2 md:col-span-1">
-<p class="font-label-lg text-label-lg text-primary uppercase">Connect</p>
-<ul class="space-y-2 font-body-md text-body-md text-on-surface-variant">
-<li>Privacy Policy</li>
-<li>Terms of Service</li>
-<li>Contact Us</li>
-</ul>
+<div class="space-y-8">
+<h3 class="font-label-md text-label-md uppercase tracking-widest">Opening Hours</h3>
+<div class="space-y-4 font-body-md opacity-70">
+<div class="flex justify-between">
+<span class="">Mon - Sat</span>
+<span class="">09:00 AM - 09:00 PM</span>
+</div>
+<div class="flex justify-between">
+<span class="">Sunday</span>
+<span class="">10:00 AM - 08:00 PM</span>
 </div>
 </div>
 </div>
-<div class="max-w-container-max-width mx-auto px-gutter py-8 border-t border-outline-variant/30 text-center md:text-left">
-<p class="font-body-md text-body-md text-on-surface-variant opacity-60">© 2024 Rathod Hair Art. All rights reserved. Crafted for Excellence.</p>
+</div>
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop pt-12 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-6">
+<p class="font-body-md text-secondary-fixed-dim opacity-70">© 2024 RATHOD HAIR ART. PRECISION CRAFTED.</p>
+<div class="flex gap-8">
+<a class="text-secondary-fixed-dim hover:text-on-primary transition-all opacity-70" href="#">Privacy Policy</a>
+<a class="text-secondary-fixed-dim hover:text-on-primary transition-all opacity-70" href="#">Terms of Service</a>
+<a class="text-secondary-fixed-dim hover:text-on-primary transition-all opacity-70" href="#">Location</a>
+</div>
 </div>
 </footer>
+<!-- Floating Action Buttons -->
+<div class="fixed bottom-8 right-8 z-[100] flex flex-col gap-4">
+<a class="w-14 h-14 bg-green-500 text-white rounded-full flex items-center justify-center shadow-xl hover:scale-110 transition-transform active:scale-95" href="https://wa.me/919510835788">
+<svg class="w-8 h-8 fill-current" viewbox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662c1.72.94 3.659 1.437 5.634 1.437h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"></path></svg>
+</a>
+<a class="w-14 h-14 bg-primary text-white rounded-full flex items-center justify-center shadow-xl hover:scale-110 transition-transform active:scale-95" href="tel:+919510835788">
+<span class="material-symbols-outlined text-3xl">call</span>
+</a>
+<button class="w-14 h-14 bg-white text-primary border border-primary/10 rounded-full flex items-center justify-center shadow-xl hover:scale-110 transition-transform active:scale-95" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+<span class="material-symbols-outlined text-3xl">expand_less</span>
+</button>
+</div>
 <script>
-    // Reveal Animations
-    const observerOptions = {
-      threshold: 0.1
-    };
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('active');
-        }
-      });
-    }, observerOptions);
-    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+        // Navbar scroll effect
+        const nav = document.getElementById('main-nav');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                nav.classList.add('h-16', 'md:h-20', 'shadow-md');
+                nav.classList.remove('h-20', 'md:h-24', 'shadow-sm');
+            } else {
+                nav.classList.remove('h-16', 'md:h-20', 'shadow-md');
+                nav.classList.add('h-20', 'md:h-24', 'shadow-sm');
+            }
+        });
 
-    // Smooth Scroll Active Link Handler
-    window.addEventListener('scroll', () => {
-      let current = "";
-      const sections = document.querySelectorAll("section");
-      const navLinks = document.querySelectorAll("nav a");
-      sections.forEach((section) => {
-        const sectionTop = section.offsetTop;
-        if (pageYOffset >= sectionTop - 100) {
-          current = section.getAttribute("id");
+        // Review carousel logic
+        const track = document.getElementById('review-track');
+        let index = 0;
+        const totalReviews = 2;
+
+        setInterval(() => {
+            index = (index + 1) % totalReviews;
+            track.style.transform = `translateX(-${index * 100}%)`;
+        }, 5000);
+
+        // Counter animation
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const counterObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const target = parseInt(entry.target.getAttribute('data-target'));
+                    animateCounter(entry.target, target);
+                    counterObserver.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('[data-target]').forEach(counter => {
+            counterObserver.observe(counter);
+        });
+
+        function animateCounter(element, target) {
+            let current = 0;
+            const duration = 2000;
+            const stepTime = 20;
+            const steps = duration / stepTime;
+            const increment = target / steps;
+
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                    element.textContent = target + (target > 100 ? '+' : '');
+                    clearInterval(timer);
+                } else {
+                    element.textContent = Math.floor(current);
+                }
+            }, stepTime);
         }
-      });
-      navLinks.forEach((link) => {
-        link.classList.remove("border-b-2", "border-primary", "pb-1");
-        link.classList.add("text-on-surface-variant");
-        if (link.getAttribute("href") === `#${current}`) {
-          link.classList.add("border-b-2", "border-primary", "pb-1");
-          link.classList.remove("text-on-surface-variant");
-        }
-      });
-    });
-  </script>
+
+        // Active Nav Tracking
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('nav a');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= (sectionTop - 200)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('text-primary', 'border-b-2', 'border-primary', 'font-bold');
+                link.classList.add('text-secondary');
+                if (link.getAttribute('href').includes(current)) {
+                    link.classList.add('text-primary', 'border-b-2', 'border-primary', 'font-bold');
+                    link.classList.remove('text-secondary');
+                }
+            });
+        });
+    </script>
 </body></html>
