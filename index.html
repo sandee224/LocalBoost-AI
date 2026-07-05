@@ -8,7 +8,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
 <!-- Material Symbols -->
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <!-- Tailwind CSS -->
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <script id="tailwind-config">
@@ -132,15 +131,29 @@
             gap: 24px;
         }
         .masonry-item-tall { grid-row: span 2; }
+
+        .image-modal-overlay {
+            background-color: rgba(0, 0, 0, 0.9);
+            transition: opacity 0.3s ease-in-out;
+        }
     </style>
 </head>
 <body class="bg-background text-on-background font-body-md selection:bg-primary-fixed selection:text-primary overflow-x-hidden">
+<!-- Image Zoom Modal -->
+<div class="fixed inset-0 z-[1000] hidden items-center justify-center p-4 md:p-12 image-modal-overlay" id="image-modal">
+<button class="absolute top-8 right-8 text-white hover:opacity-70 transition-opacity" onclick="closeModal()">
+<span class="material-symbols-outlined text-4xl">close</span>
+</button>
+<div class="max-w-5xl w-full max-h-full flex items-center justify-center">
+<img class="max-w-full max-h-[85vh] object-contain rounded-lg shadow-2xl transition-transform duration-500 scale-95" id="modal-img" src=""/>
+</div>
+</div>
 <!-- TopNavBar -->
 <header class="fixed top-0 w-full z-50 bg-white/70 dark:bg-black/70 backdrop-blur-xl border-b border-black/5 dark:border-white/5 transition-all duration-500 h-20 md:h-24" id="main-nav">
 <div class="flex justify-between items-center max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop h-full">
 <a class="font-display-lg text-headline-lg-mobile md:text-headline-lg tracking-tighter text-primary dark:text-on-primary" href="#">
-                RATHOD HAIR ART
-            </a>
+            RATHOD HAIR ART
+        </a>
 <nav class="hidden md:flex items-center gap-8">
 <a class="font-label-md text-label-md uppercase tracking-widest text-primary border-b-2 border-primary font-bold" href="#home">Home</a>
 <a class="font-label-md text-label-md uppercase tracking-widest text-secondary hover:text-primary transition-colors" href="#services">Services</a>
@@ -150,8 +163,8 @@
 <a class="font-label-md text-label-md uppercase tracking-widest text-secondary hover:text-primary transition-colors" href="#contact">Contact</a>
 </nav>
 <button class="bg-primary text-on-primary px-8 py-4 rounded-full font-label-md text-label-md uppercase tracking-widest hover:opacity-80 transition-all active:scale-95">
-                Book Appointment
-            </button>
+            Book Appointment
+        </button>
 </div>
 </header>
 <!-- Hero Section -->
@@ -159,11 +172,11 @@
 <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop grid md:grid-cols-2 gap-16 items-center">
 <div class="space-y-8 text-center text-white items-center flex flex-col">
 <h1 class="font-display-lg text-[48px] md:text-display-lg leading-tight uppercase text-white">
-                    Where Style<br/>Meets Confidence
-                </h1>
+                Where Style<br/>Meets Confidence
+            </h1>
 <p class="font-body-lg text-body-lg text-secondary max-w-lg text-white/90 mx-auto">
-                    Experience Jamnagar's premier destination for high-end men's grooming. We combine classical barbering techniques with modern precision.
-                </p>
+                Experience Jamnagar's premier destination for high-end men's grooming. We combine classical barbering techniques with modern precision.
+            </p>
 <div class="space-y-4">
 <div class="flex items-center gap-3">
 <span class="material-symbols-outlined text-primary text-white" data-weight="fill">check_circle</span>
@@ -192,52 +205,52 @@
 <span class="font-label-md text-label-md uppercase tracking-[0.3em] text-secondary-fixed-dim">Artisanal Services</span>
 <h2 class="font-display-lg text-headline-lg mt-4 uppercase">The Grooming Menu</h2>
 </div>
-<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop grid grid-cols-2 md:grid-cols-4 gap-gutter grid-cols-1 sm:grid-cols-2">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-gutter">
 <!-- Service Cards -->
-<div class="group relative aspect-square overflow-hidden rounded-lg bg-black">
-<img class="absolute inset-0 w-full h-full object-cover opacity-70 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700" data-alt="Close up of a professional barber performing a precision fade haircut using high-end clippers, dramatic side lighting highlighting the texture of the hair, minimalist gray background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXpnQABnkxmRIEAlMmxU5bJbJOkKAHIOLqdsfGahp3lXunaO0XJEtxcWtY_3HJIRYF_NOg2sBxtPQPFODLPbf_YiJeNtZ5Hnt2b8GxS64ttFuRAshqX9l9UNglfHQuIUq0AKiKy888N_quP-wjhKZPjg2EfRZJSLVMFEG0M0VTlj7xTANXJGal23DsGkId6yUc156XSePaGv4rLkVFbieGZWuyWmPp9ZfM4lqZH6xslvVcGiy-uLS77g"/>
+<div class="group relative aspect-square overflow-hidden rounded-lg bg-black cursor-pointer" onclick="openModal(this.querySelector('img').src)">
+<img class="absolute inset-0 w-full h-full object-cover opacity-70 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700" data-alt="Hair Cut" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXpnQABnkxmRIEAlMmxU5bJbJOkKAHIOLqdsfGahp3lXunaO0XJEtxcWtY_3HJIRYF_NOg2sBxtPQPFODLPbf_YiJeNtZ5Hnt2b8GxS64ttFuRAshqX9l9UNglfHQuIUq0AKiKy888N_quP-wjhKZPjg2EfRZJSLVMFEG0M0VTlj7xTANXJGal23DsGkId6yUc156XSePaGv4rLkVFbieGZWuyWmPp9ZfM4lqZH6xslvVcGiy-uLS77g"/>
 <div class="absolute inset-x-0 bottom-0 p-6 bg-gradient-to-t from-black/80 to-transparent">
 <p class="font-label-md text-label-md text-white uppercase tracking-widest">Hair Cut</p>
 </div>
 </div>
-<div class="group relative aspect-square overflow-hidden rounded-lg bg-black">
-<img class="absolute inset-0 w-full h-full object-cover opacity-70 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700" data-alt="A detailed shot of a beard trim being performed with a traditional straight razor, luxurious shaving cream applied, warm ambient lighting in a high-end salon." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBGijsS4Bume32lxD3JoHIWaDqXab-somqY_Yl9f2k0clMNSZpkumPYpHlpca7JuG-G8YwCu8HPblDrMF7zdHzXo8qe9pzn0mPcXjlwfHhDjdubx1r6jTUwH7W6jrULhs2T5PSEaiUKrcdyUiwgtGKIemL6JtlZreyqqM5piQLDf7y8xDsYE1wXlTAez9fj5H7jWMaFtNcnYLth3rnXfRKinQlMsE-PTKCH-M7Kg89maqKiJCm895GANw"/>
+<div class="group relative aspect-square overflow-hidden rounded-lg bg-black cursor-pointer" onclick="openModal(this.querySelector('img').src)">
+<img class="absolute inset-0 w-full h-full object-cover opacity-70 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700" data-alt="Beard Trim" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBGijsS4Bume32lxD3JoHIWaDqXab-somqY_Yl9f2k0clMNSZpkumPYpHlpca7JuG-G8YwCu8HPblDrMF7zdHzXo8qe9pzn0mPcXjlwfHhDjdubx1r6jTUwH7W6jrULhs2T5PSEaiUKrcdyUiwgtGKIemL6JtlZreyqqM5piQLDf7y8xDsYE1wXlTAez9fj5H7jWMaFtNcnYLth3rnXfRKinQlMsE-PTKCH-M7Kg89maqKiJCm895GANw"/>
 <div class="absolute inset-x-0 bottom-0 p-6 bg-gradient-to-t from-black/80 to-transparent">
 <p class="font-label-md text-label-md text-white uppercase tracking-widest">Beard Trim</p>
 </div>
 </div>
-<div class="group relative aspect-square overflow-hidden rounded-lg bg-black">
-<img class="absolute inset-0 w-full h-full object-cover opacity-70 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700" data-alt="Man receiving a relaxing hair spa treatment with professional hair masks and steam, serene spa environment, soft focus, high-end grooming aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBp1QEfk_stBb5VhIcX6eUhxCqGuEOgPuGCF1QV8qMgwFPalE-3DVB58o4GwzpGGLUEb1kjGmI89qOQDBgNAyGsgIgiVXB7DILmVWVwiRhjTIPvnqFfEUEjcw9_Hb_BRakixItFXaI5PUjrTGKMLnlJtAOU6PBxJdaK4Buw5JGSE5wCAX4iZ5USGKwMyDb6CClOy9F3dLaW7Csjcc3FjLB0jD3mb6LnAmHgGlIyPRRc4HnlGEX1Z7fP-A"/>
+<div class="group relative aspect-square overflow-hidden rounded-lg bg-black cursor-pointer" onclick="openModal(this.querySelector('img').src)">
+<img class="absolute inset-0 w-full h-full object-cover opacity-70 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700" data-alt="Hair Spa" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBp1QEfk_stBb5VhIcX6eUhxCqGuEOgPuGCF1QV8qMgwFPalE-3DVB58o4GwzpGGLUEb1kjGmI89qOQDBgNAyGsgIgiVXB7DILmVWVwiRhjTIPvnqFfEUEjcw9_Hb_BRakixItFXaI5PUjrTGKMLnlJtAOU6PBxJdaK4Buw5JGSE5wCAX4iZ5USGKwMyDb6CClOy9F3dLaW7Csjcc3FjLB0jD3mb6LnAmHgGlIyPRRc4HnlGEX1Z7fP-A"/>
 <div class="absolute inset-x-0 bottom-0 p-6 bg-gradient-to-t from-black/80 to-transparent">
 <p class="font-label-md text-label-md text-white uppercase tracking-widest">Hair Spa</p>
 </div>
 </div>
-<div class="group relative aspect-square overflow-hidden rounded-lg bg-black">
-<img class="absolute inset-0 w-full h-full object-cover opacity-70 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700" data-alt="Professional hair coloring process for men, highlighting modern techniques, subtle tonal shifts, clean studio lighting, focus on hair texture." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBoKWmVFOhaQbHkRcX70BVXvdcK-kV23c--4TA5punjWl0BZU8_ALzZxq9fbJr-lPEJStzVBgdlLd0DBXbdz5060BPc61OKFJoXyFbZLfsMvc9G2KJeC9SuvefLcR1OZkyuKHE_Jcy_m3HhWdcxcv_dz3GNVbZek9YISMPEJ-ZREGgwSDyLm2LaVrqQ4Mm_b1M8Z34WWMfrUpTx-BTtNCPaNxI0gbN5RrFwF_reEVEGOmUNOCXGlIygFw"/>
+<div class="group relative aspect-square overflow-hidden rounded-lg bg-black cursor-pointer" onclick="openModal(this.querySelector('img').src)">
+<img class="absolute inset-0 w-full h-full object-cover opacity-70 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700" data-alt="Hair Color" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBoKWmVFOhaQbHkRcX70BVXvdcK-kV23c--4TA5punjWl0BZU8_ALzZxq9fbJr-lPEJStzVBgdlLd0DBXbdz5060BPc61OKFJoXyFbZLfsMvc9G2KJeC9SuvefLcR1OZkyuKHE_Jcy_m3HhWdcxcv_dz3GNVbZek9YISMPEJ-ZREGgwSDyLm2LaVrqQ4Mm_b1M8Z34WWMfrUpTx-BTtNCPaNxI0gbN5RrFwF_reEVEGOmUNOCXGlIygFw"/>
 <div class="absolute inset-x-0 bottom-0 p-6 bg-gradient-to-t from-black/80 to-transparent">
 <p class="font-label-md text-label-md text-white uppercase tracking-widest">Hair Color</p>
 </div>
 </div>
-<div class="group relative aspect-square overflow-hidden rounded-lg bg-black">
-<img class="absolute inset-0 w-full h-full object-cover opacity-70 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700" data-alt="Men's keratin treatment session, smooth and sleek hair result, professional styling tools in view, minimalist high-end salon background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAv4XUTa_syHbddxHniZvcbgZAnfP7gRHmz7NvqPiJDyxzLnJXnTXIFB4rC0l83M6dTaCR_ZenACGyNHB28VyaGOMVNrXmp-qax46Qd_lBf4q0m5IMI2ng4eXjZbgaFV9nKKTwAn_cVcxzNeTem5KQxxASNoJh2aJhFjw7uNRlRBMJsBPMAxLj-II1fL4eRfW5b83GNuE4wFaR6LPe7f-_tqik67K7gds4LQSi-TweRxk-rojbMgG4UUw"/>
+<div class="group relative aspect-square overflow-hidden rounded-lg bg-black cursor-pointer" onclick="openModal(this.querySelector('img').src)">
+<img class="absolute inset-0 w-full h-full object-cover opacity-70 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700" data-alt="Keratin" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAv4XUTa_syHbddxHniZvcbgZAnfP7gRHmz7NvqPiJDyxzLnJXnTXIFB4rC0l83M6dTaCR_ZenACGyNHB28VyaGOMVNrXmp-qax46Qd_lBf4q0m5IMI2ng4eXjZbgaFV9nKKTwAn_cVcxzNeTem5KQxxASNoJh2aJhFjw7uNRlRBMJsBPMAxLj-II1fL4eRfW5b83GNuE4wFaR6LPe7f-_tqik67K7gds4LQSi-TweRxk-rojbMgG4UUw"/>
 <div class="absolute inset-x-0 bottom-0 p-6 bg-gradient-to-t from-black/80 to-transparent">
 <p class="font-label-md text-label-md text-white uppercase tracking-widest">Keratin</p>
 </div>
 </div>
-<div class="group relative aspect-square overflow-hidden rounded-lg bg-black">
-<img class="absolute inset-0 w-full h-full object-cover opacity-70 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700" data-alt="Deep cleansing facial for men using premium charcoal mask, steam in the air, relaxed client, macro photography of skin texture and professional application." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDaDtgthJ6qYbcon0uRFCkZqZUGgMBh_lBVCth1KszxT7_fA-ydLp4_NpWkzPut6K2ypWvxSwRIN8Q-w80ppuncY-G1kWvC5BuSr8ueE7yJJXD3xmcKk53BWG7xD4cPI7qpnxfX-53ykxnghxKOMjjL2gIaV3xYRSVut7fWoYzS6jIxOsw9fsSLjccmQ100aLQh0ym8TVrS_bPIy832V2MkPMNew1mQMd4IPO4E9rTTqsOev5SAESsjqw"/>
+<div class="group relative aspect-square overflow-hidden rounded-lg bg-black cursor-pointer" onclick="openModal(this.querySelector('img').src)">
+<img class="absolute inset-0 w-full h-full object-cover opacity-70 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700" data-alt="Facial" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDaDtgthJ6qYbcon0uRFCkZqZUGgMBh_lBVCth1KszxT7_fA-ydLp4_NpWkzPut6K2ypWvxSwRIN8Q-w80ppuncY-G1kWvC5BuSr8ueE7yJJXD3xmcKk53BWG7xD4cPI7qpnxfX-53ykxnghxKOMjjL2gIaV3xYRSVut7fWoYzS6jIxOsw9fsSLjccmQ100aLQh0ym8TVrS_bPIy832V2MkPMNew1mQMd4IPO4E9rTTqsOev5SAESsjqw"/>
 <div class="absolute inset-x-0 bottom-0 p-6 bg-gradient-to-t from-black/80 to-transparent">
 <p class="font-label-md text-label-md text-white uppercase tracking-widest">Facial</p>
 </div>
 </div>
-<div class="group relative aspect-square overflow-hidden rounded-lg bg-black">
-<img class="absolute inset-0 w-full h-full object-cover opacity-70 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700" data-alt="Traditional hot towel shave in progress, thick white foam, vintage straight razor, classic barber shop chair and ambiance, cinematic lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCYGy3Z8Xa9OekdczGo91UB_VXgKvZXQKfASc_ZYN-MHWoD_t1NGMwyOw29PIDlrt16GQkGoJfaVwPqhSI32gYZ3b7n_ORpW3EZeMCQODvDqO3f7K2sBLwx9fjn31veuUgTqJFk60JXxY-aP7NfMNoWgcB9_wiy8W0S1Il-DdLHjPp-jOYqcXKhC2GDbiA4KFZ-cekG_lGzjPCbZGbhVA0VnmGcMqEcHsXSJJtZyn-2ILyg63l7U4hm6w"/>
+<div class="group relative aspect-square overflow-hidden rounded-lg bg-black cursor-pointer" onclick="openModal(this.querySelector('img').src)">
+<img class="absolute inset-0 w-full h-full object-cover opacity-70 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700" data-alt="Shaving" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCYGy3Z8Xa9OekdczGo91UB_VXgKvZXQKfASc_ZYN-MHWoD_t1NGMwyOw29PIDlrt16GQkGoJfaVwPqhSI32gYZ3b7n_ORpW3EZeMCQODvDqO3f7K2sBLwx9fjn31veuUgTqJFk60JXxY-aP7NfMNoWgcB9_wiy8W0S1Il-DdLHjPp-jOYqcXKhC2GDbiA4KFZ-cekG_lGzjPCbZGbhVA0VnmGcMqEcHsXSJJtZyn-2ILyg63l7U4hm6w"/>
 <div class="absolute inset-x-0 bottom-0 p-6 bg-gradient-to-t from-black/80 to-transparent">
 <p class="font-label-md text-label-md text-white uppercase tracking-widest">Shaving</p>
 </div>
 </div>
-<div class="group relative aspect-square overflow-hidden rounded-lg bg-black">
-<img class="absolute inset-0 w-full h-full object-cover opacity-70 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700" data-alt="Invigorating head massage with scalp oils, hands of a professional therapist, calm environment, warm lighting, luxury wellness focus." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDyYyVgBVFPMpG6YDJBlocGjZIfn28iKZ4X6GB5k4u03agMoebT9L1JD5Ezhn3BCnq6IdQj-CE1TLsOOWxxniai3lxh9EJFKxtXixV_9a5qS_HfkqM2f4mWvxFe-UcsZOPp56L9dmBcPENUHvXj7FNEEoxEnEYClkdfMcAAG8SMeHk8GTfzFiqIUne3OPZ2jsnjVoi0iwQLscgQBEuNVUBvSE5O17W4cO_spq1PULDeSrArlMuOXzCvmQ"/>
+<div class="group relative aspect-square overflow-hidden rounded-lg bg-black cursor-pointer" onclick="openModal(this.querySelector('img').src)">
+<img class="absolute inset-0 w-full h-full object-cover opacity-70 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700" data-alt="Head Massage" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDyYyVgBVFPMpG6YDJBlocGjZIfn28iKZ4X6GB5k4u03agMoebT9L1JD5Ezhn3BCnq6IdQj-CE1TLsOOWxxniai3lxh9EJFKxtXixV_9a5qS_HfkqM2f4mWvxFe-UcsZOPp56L9dmBcPENUHvXj7FNEEoxEnEYClkdfMcAAG8SMeHk8GTfzFiqIUne3OPZ2jsnjVoi0iwQLscgQBEuNVUBvSE5O17W4cO_spq1PULDeSrArlMuOXzCvmQ"/>
 <div class="absolute inset-x-0 bottom-0 p-6 bg-gradient-to-t from-black/80 to-transparent">
 <p class="font-label-md text-label-md text-white uppercase tracking-widest">Head Massage</p>
 </div>
@@ -246,7 +259,7 @@
 </section>
 <!-- Stats Section -->
 <section class="py-24 border-y border-outline-variant bg-white">
-<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop grid grid-cols-2 md:grid-cols-4 gap-12 text-center grid-cols-1 sm:grid-cols-2">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-12 text-center">
 <div class="space-y-2">
 <h3 class="font-display-lg text-display-lg" data-target="5">5</h3>
 <p class="font-label-md text-label-md uppercase tracking-[0.2em] text-secondary">Years of Craft</p>
@@ -279,58 +292,88 @@
 </div>
 <div class="flex animate-infinite-scroll hover:pause whitespace-nowrap gap-gutter">
 <!-- Carousel Items -->
-<div class="inline-block w-80 group">
+<div class="inline-block w-80 group cursor-pointer" onclick="openModal(this.querySelector('img').src)">
 <div class="aspect-square rounded-lg overflow-hidden mb-4">
 <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDB1OkkFcS1CUgjDcF7hyfvhVuxWprWpLo5gJFTp4zkY7VDMcwf5KczlJYv4CJuMsIY3duVdIf4Y5mpEEQu28Op-7aVCqoa70Djafh1R27dfMO2aJEn4wSwEKI34VXGmknKs0N2UlMhwKwywWD-PG3M20cc4himaBalQ7zJ8ev0YjImjBOM77F2H4cNBZhU28nuc_QBa_7a4urKAu647iFaQxzmLzlJxRwoR-l_DF5gCdHS9fb2zhWyXA"/>
 </div>
 <h4 class="font-label-md text-label-md uppercase tracking-widest text-center">Textured Crop</h4>
 </div>
-<div class="inline-block w-80 group">
+<div class="inline-block w-80 group cursor-pointer" onclick="openModal(this.querySelector('img').src)">
 <div class="aspect-square rounded-lg overflow-hidden mb-4">
 <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCoLhnfaVQlW9IXqi-Tp04gMiXu59bTVEZs_86XiAYYTt1hf1tv2iNQNjJx0qhDElFeGS0-ze9TFmYOiYrT15w35337Dcd86GzlfORsm0vn4yi4QA2GoA4KnB4L9PHVxuj9HizxJAIMn0RAey3IiRO-ujRPLJHY46v_JDUhwdQcxhrpFBGsvrCoYP-h5v8dxy-J94gCUXY4Ndq_pyC7vg2iB01wy0qWhCMwDDYqCUcTaabxREnXcvGSrw"/>
 </div>
 <h4 class="font-label-md text-label-md uppercase tracking-widest text-center">Pompadour</h4>
 </div>
-<div class="inline-block w-80 group">
+<div class="inline-block w-80 group cursor-pointer" onclick="openModal(this.querySelector('img').src)">
 <div class="aspect-square rounded-lg overflow-hidden mb-4">
 <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDOT0Pf5qRluKORz7f1zDBC_K7VpndnuOEmgcv3nx2TMzRYr9Sb1uVFklQAy1ygg8Uj6MtcGsWsJR2lPsSCC3Ce6rj8N-Qh47o0H8xwuDRuTVC7ejQ2l7v35zEzh0XOFLD58rtHzg_XsNbdLlorLUFcibwDABZI3ReWHKk8l5LWGtufsxQZDY0xUZ5Z9HUt8MRrHB13rkdlQKOEBh9pwoGyNa8ML2_-BdoS7Xw4cfxXybnwcnX_j6PGLA"/>
 </div>
 <h4 class="font-label-md text-label-md uppercase tracking-widest text-center">Slick Back</h4>
 </div>
-<div class="inline-block w-80 group">
+<div class="inline-block w-80 group cursor-pointer" onclick="openModal(this.querySelector('img').src)">
 <div class="aspect-square rounded-lg overflow-hidden mb-4">
 <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA-qKAEidyNWTfCkytinckor_q6Y4xhxgKSNywXkgoJCSvlMy5DbHDwyd-FBg7ts71J6A-zIKKVULKBkVxKYoAGLUnhyLdeZxmtEi7O6Dy6y4Eu7JjjuTC17c8YlgRreWlw_qjiqmuTGCv31TMghfnAbke7PzgzhuN-a-Irrag8E4STfx-A2zPOdYn68762AQsWB-ByAMFF2LBCqQBbtEZjSNU9uSWvAuOHHShK26Q_0d2eFvr4AtL8oQ"/>
 </div>
 <h4 class="font-label-md text-label-md uppercase tracking-widest text-center">Modern Fade</h4>
 </div>
 <!-- Duplicates for infinite scroll -->
-<div class="inline-block w-80 group">
+<div class="inline-block w-80 group cursor-pointer" onclick="openModal(this.querySelector('img').src)">
 <div class="aspect-square rounded-lg overflow-hidden mb-4">
 <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDB1OkkFcS1CUgjDcF7hyfvhVuxWprWpLo5gJFTp4zkY7VDMcwf5KczlJYv4CJuMsIY3duVdIf4Y5mpEEQu28Op-7aVCqoa70Djafh1R27dfMO2aJEn4wSwEKI34VXGmknKs0N2UlMhwKwywWD-PG3M20cc4himaBalQ7zJ8ev0YjImjBOM77F2H4cNBZhU28nuc_QBa_7a4urKAu647iFaQxzmLzlJxRwoR-l_DF5gCdHS9fb2zhWyXA"/>
 </div>
 <h4 class="font-label-md text-label-md uppercase tracking-widest text-center">Textured Crop</h4>
 </div>
-<div class="inline-block w-80 group">
+<div class="inline-block w-80 group cursor-pointer" onclick="openModal(this.querySelector('img').src)">
 <div class="aspect-square rounded-lg overflow-hidden mb-4">
 <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCoLhnfaVQlW9IXqi-Tp04gMiXu59bTVEZs_86XiAYYTt1hf1tv2iNQNjJx0qhDElFeGS0-ze9TFmYOiYrT15w35337Dcd86GzlfORsm0vn4yi4QA2GoA4KnB4L9PHVxuj9HizxJAIMn0RAey3IiRO-ujRPLJHY46v_JDUhwdQcxhrpFBGsvrCoYP-h5v8dxy-J94gCUXY4Ndq_pyC7vg2iB01wy0qWhCMwDDYqCUcTaabxREnXcvGSrw"/>
 </div>
 <h4 class="font-label-md text-label-md uppercase tracking-widest text-center">Pompadour</h4>
 </div>
-<div class="inline-block w-80 group">
+<div class="inline-block w-80 group cursor-pointer" onclick="openModal(this.querySelector('img').src)">
 <div class="aspect-square rounded-lg overflow-hidden mb-4">
 <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDOT0Pf5qRluKORz7f1zDBC_K7VpndnuOEmgcv3nx2TMzRYr9Sb1uVFklQAy1ygg8Uj6MtcGsWsJR2lPsSCC3Ce6rj8N-Qh47o0H8xwuDRuTVC7ejQ2l7v35zEzh0XOFLD58rtHzg_XsNbdLlorLUFcibwDABZI3ReWHKk8l5LWGtufsxQZDY0xUZ5Z9HUt8MRrHB13rkdlQKOEBh9pwoGyNa8ML2_-BdoS7Xw4cfxXybnwcnX_j6PGLA"/>
 </div>
 <h4 class="font-label-md text-label-md uppercase tracking-widest text-center">Slick Back</h4>
 </div>
-<div class="inline-block w-80 group">
+<div class="inline-block w-80 group cursor-pointer" onclick="openModal(this.querySelector('img').src)">
 <div class="aspect-square rounded-lg overflow-hidden mb-4">
 <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA-qKAEidyNWTfCkytinckor_q6Y4xhxgKSNywXkgoJCSvlMy5DbHDwyd-FBg7ts71J6A-zIKKVULKBkVxKYoAGLUnhyLdeZxmtEi7O6Dy6y4Eu7JjjuTC17c8YlgRreWlw_qjiqmuTGCv31TMghfnAbke7PzgzhuN-a-Irrag8E4STfx-A2zPOdYn68762AQsWB-ByAMFF2LBCqQBbtEZjSNU9uSWvAuOHHShK26Q_0d2eFvr4AtL8oQ"/>
 </div>
 <h4 class="font-label-md text-label-md uppercase tracking-widest text-center">Modern Fade</h4>
 </div>
 </div>
+<!-- Expanded Looks Grid -->
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop mt-16 hidden" id="expanded-looks">
+<div class="h-[600px] overflow-y-auto no-scrollbar rounded-xl border border-outline-variant p-8 bg-surface-container-low">
+<div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-6">
+<!-- Grid Placeholder Items -->
+<script>
+                    const expandedGrid = document.currentScript.parentElement;
+                    const images = [
+                        'https://lh3.googleusercontent.com/aida-public/AB6AXuDB1OkkFcS1CUgjDcF7hyfvhVuxWprWpLo5gJFTp4zkY7VDMcwf5KczlJYv4CJuMsIY3duVdIf4Y5mpEEQu28Op-7aVCqoa70Djafh1R27dfMO2aJEn4wSwEKI34VXGmknKs0N2UlMhwKwywWD-PG3M20cc4himaBalQ7zJ8ev0YjImjBOM77F2H4cNBZhU28nuc_QBa_7a4urKAu647iFaQxzmLzlJxRwoR-l_DF5gCdHS9fb2zhWyXA',
+                        'https://lh3.googleusercontent.com/aida-public/AB6AXuCoLhnfaVQlW9IXqi-Tp04gMiXu59bTVEZs_86XiAYYTt1hf1tv2iNQNjJx0qhDElFeGS0-ze9TFmYOiYrT15w35337Dcd86GzlfORsm0vn4yi4QA2GoA4KnB4L9PHVxuj9HizxJAIMn0RAey3IiRO-ujRPLJHY46v_JDUhwdQcxhrpFBGsvrCoYP-h5v8dxy-J94gCUXY4Ndq_pyC7vg2iB01wy0qWhCMwDDYqCUcTaabxREnXcvGSrw',
+                        'https://lh3.googleusercontent.com/aida-public/AB6AXuDOT0Pf5qRluKORz7f1zDBC_K7VpndnuOEmgcv3nx2TMzRYr9Sb1uVFklQAy1ygg8Uj6MtcGsWsJR2lPsSCC3Ce6rj8N-Qh47o0H8xwuDRuTVC7ejQ2l7v35zEzh0XOFLD58rtHzg_XsNbdLlorLUFcibwDABZI3ReWHKk8l5LWGtufsxQZDY0xUZ5Z9HUt8MRrHB13rkdlQKOEBh9pwoGyNa8ML2_-BdoS7Xw4cfxXybnwcnX_j6PGLA',
+                        'https://lh3.googleusercontent.com/aida-public/AB6AXuA-qKAEidyNWTfCkytinckor_q6Y4xhxgKSNywXkgoJCSvlMy5DbHDwyd-FBg7ts71J6A-zIKKVULKBkVxKYoAGLUnhyLdeZxmtEi7O6Dy6y4Eu7JjjuTC17c8YlgRreWlw_qjiqmuTGCv31TMghfnAbke7PzgzhuN-a-Irrag8E4STfx-A2zPOdYn68762AQsWB-ByAMFF2LBCqQBbtEZjSNU9uSWvAuOHHShK26Q_0d2eFvr4AtL8oQ'
+                    ];
+                    for(let i=0; i<20; i++) {
+                        const imgUrl = images[i % images.length];
+                        expandedGrid.innerHTML += `
+                            <div class="group cursor-pointer" onclick="openModal('${imgUrl}')">
+                                <div class="aspect-square rounded-lg overflow-hidden mb-2">
+                                    <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="${imgUrl}"/>
+                                </div>
+                            </div>
+                        `;
+                    }
+                </script>
+</div>
+<div class="mt-8 text-center">
+<p class="font-body-md text-secondary opacity-70">Scroll for more of our 1000+ precision crafted looks</p>
+</div>
+</div>
+</div>
 <div class="flex justify-center mt-16">
-<button class="font-label-md text-label-md uppercase tracking-[0.3em] border-b-2 border-primary pb-2 hover:opacity-60 transition-all">View All 1000+ Looks</button>
+<button class="font-label-md text-label-md uppercase tracking-[0.3em] border-b-2 border-primary pb-2 hover:opacity-60 transition-all" id="toggle-looks">View All 1000+ Looks</button>
 </div>
 </section>
 <!-- Instagram Reels Grid -->
@@ -382,17 +425,17 @@
 <!-- Gallery Section -->
 <section class="py-section-gap" id="gallery">
 <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop masonry-grid">
-<div class="masonry-item-tall overflow-hidden rounded-xl bg-surface">
-<img class="w-full h-full object-cover" data-alt="A wide angle shot of Rathod Hair Art salon interior featuring minimalist architectural design, large circular mirrors with integrated backlighting, and sleek black barber chairs. The floor is white polished marble, creating a bright, spacious, and ultra-luxurious feel." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAkcoKQkcnKnExewUTj1s5jxVz-dZx37-WbY9qtJPYMTKeDybNKOAWsDmvGK2R30rwxU-9efluYCncXkFsgk4ylsb_z3gbHLme1gGsH1CVhGCOt4zfnVnWf90UBwa7GGLGe2P1msD9HO4X59Ic7njRfU_-x8EzXx6JdnF_Oi6Qy0qq8h2tQOkvI69P_cB9yXQhK9gHQF1aIuZxQsxXMu1FMlFhSXyQLdTJDEbmw5WpoHvv2JCoJYOvPGw"/>
+<div class="masonry-item-tall overflow-hidden rounded-xl bg-surface cursor-pointer" onclick="openModal(this.querySelector('img').src)">
+<img class="w-full h-full object-cover" data-alt="Salon interior" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAkcoKQkcnKnExewUTj1s5jxVz-dZx37-WbY9qtJPYMTKeDybNKOAWsDmvGK2R30rwxU-9efluYCncXkFsgk4ylsb_z3gbHLme1gGsH1CVhGCOt4zfnVnWf90UBwa7GGLGe2P1msD9HO4X59Ic7njRfU_-x8EzXx6JdnF_Oi6Qy0qq8h2tQOkvI69P_cB9yXQhK9gHQF1aIuZxQsxXMu1FMlFhSXyQLdTJDEbmw5WpoHvv2JCoJYOvPGw"/>
 </div>
-<div class="overflow-hidden rounded-xl bg-surface">
-<img class="w-full h-full object-cover" data-alt="Close up of high-end barbering tools including professional clippers, straight razors, and brushes neatly arranged on a white marble countertop. Focus is sharp on the metallic textures, minimalist aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBkvV3dYd5yARF7STbScqUY-4nDL9DOFjO_ql32Kl9lpduaE55fsOdJyyLOjx-J-Vi2JrlFitYNAwo6t_QPK8lwtmdIY36EXf1mMidZXGP5Ane4RMw_kMUbti96FLaB8FPYedq3wh04vtPojLL-5CRNILtgkqRY6rSRnWIKKOlPHXfC6Q7KvQWLqeIANXrQ0rACKGv2nlm_RB2JKCA1aEANNKHREBpHPdTf_psbz08ygGV69i7gbPAroQ"/>
+<div class="overflow-hidden rounded-xl bg-surface cursor-pointer" onclick="openModal(this.querySelector('img').src)">
+<img class="w-full h-full object-cover" data-alt="Tools" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBkvV3dYd5yARF7STbScqUY-4nDL9DOFjO_ql32Kl9lpduaE55fsOdJyyLOjx-J-Vi2JrlFitYNAwo6t_QPK8lwtmdIY36EXf1mMidZXGP5Ane4RMw_kMUbti96FLaB8FPYedq3wh04vtPojLL-5CRNILtgkqRY6rSRnWIKKOlPHXfC6Q7KvQWLqeIANXrQ0rACKGv2nlm_RB2JKCA1aEANNKHREBpHPdTf_psbz08ygGV69i7gbPAroQ"/>
 </div>
-<div class="masonry-item-tall overflow-hidden rounded-xl bg-surface">
-<img class="w-full h-full object-cover" data-alt="A macro shot of premium men's hair styling products from Italy, elegant black and white packaging, sitting on a glass shelf with soft bokeh lighting in the background of a luxury salon." src="https://lh3.googleusercontent.com/aida-public/AB6AXuChl7J_H7POJSgnK1-aXkeX-gwBGcNF5LYf-ElhS2q1r0cviRdFfWoKmiWCU-83lHiidmVPpamgGMcS_s60OzCJq1RC9XDSUbB463gQ0kqQbFrNmeMer85MyggVXa5m3MnwuzTZqrCsHhHHs7g-3DvaD0Fk410SWLJA4GUH2MKjL00IBGaOpR5IVpJmgAcuWpfS3mlw0vlr7Ep06Pefog4VDausmuUlVFSlD4K3Kwd6brvgruJhLM5Olg"/>
+<div class="masonry-item-tall overflow-hidden rounded-xl bg-surface cursor-pointer" onclick="openModal(this.querySelector('img').src)">
+<img class="w-full h-full object-cover" data-alt="Products" src="https://lh3.googleusercontent.com/aida-public/AB6AXuChl7J_H7POJSgnK1-aXkeX-gwBGcNF5LYf-ElhS2q1r0cviRdFfWoKmiWCU-83lHiidmVPpamgGMcS_s60OzCJq1RC9XDSUbB463gQ0kqQbFrNmeMer85MyggVXa5m3MnwuzTZqrCsHhHHs7g-3DvaD0Fk410SWLJA4GUH2MKjL00IBGaOpR5IVpJmgAcuWpfS3mlw0vlr7Ep06Pefog4VDausmuUlVFSlD4K3Kwd6brvgruJhLM5Olg"/>
 </div>
-<div class="overflow-hidden rounded-xl bg-surface">
-<img class="w-full h-full object-cover" data-alt="Professional stylist at Rathod Hair Art carefully consulting with a client, pointing at a style catalog on a tablet, modern high-end grooming environment, soft cinematic lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBeVBo-UjIvaV_u2kGcMxMKpcjcLljTsmJMsXEyoLzBGX2oF2ov0xDRyjBjivFHoP2AenZlVxfcqB9HOjbGl3QXQkDFZ-YX1t65fK4ZpGO6o2K9swOYGUwjomzRJy9ixl5Y1CfWKus6uVghCoCcR6WjfsQTbLmjQ5f2s9R4dLMKSYvtqAy9l5jfXsLG36DmRFXH_THP78uTGVkJCXUuGwcQr1yp5iVmcpDBdrn_8wYXqGLwLKUsRNTQnw"/>
+<div class="overflow-hidden rounded-xl bg-surface cursor-pointer" onclick="openModal(this.querySelector('img').src)">
+<img class="w-full h-full object-cover" data-alt="Consultation" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBeVBo-UjIvaV_u2kGcMxMKpcjcLljTsmJMsXEyoLzBGX2oF2ov0xDRyjBjivFHoP2AenZlVxfcqB9HOjbGl3QXQkDFZ-YX1t65fK4ZpGO6o2K9swOYGUwjomzRJy9ixl5Y1CfWKus6uVghCoCcR6WjfsQTbLmjQ5f2s9R4dLMKSYvtqAy9l5jfXsLG36DmRFXH_THP78uTGVkJCXUuGwcQr1yp5iVmcpDBdrn_8wYXqGLwLKUsRNTQnw"/>
 </div>
 </div>
 </section>
@@ -414,8 +457,8 @@
 <span class="material-symbols-outlined text-yellow-400" style="font-variation-settings: 'FILL' 1;">star</span>
 </div>
 <p class="font-display-lg text-2xl md:text-3xl italic leading-relaxed mb-8">
-                        "The best grooming experience I've had in Jamnagar. The attention to detail at Rathod Hair Art is unmatched. Truly precision crafted."
-                    </p>
+                    "The best grooming experience I've had in Jamnagar. The attention to detail at Rathod Hair Art is unmatched. Truly precision crafted."
+                </p>
 <div class="font-label-md text-label-md uppercase tracking-widest text-on-primary/70">Aniket Sharma</div>
 </div>
 <!-- Review Card 2 -->
@@ -428,8 +471,8 @@
 <span class="material-symbols-outlined text-yellow-400" style="font-variation-settings: 'FILL' 1;">star</span>
 </div>
 <p class="font-display-lg text-2xl md:text-3xl italic leading-relaxed mb-8">
-                        "Master stylists who actually understand modern hair trends. The salon vibe is sophisticated and the service is exceptional."
-                    </p>
+                    "Master stylists who actually understand modern hair trends. The salon vibe is sophisticated and the service is exceptional."
+                </p>
 <div class="font-label-md text-label-md uppercase tracking-widest text-on-primary/70">Rajesh Varma</div>
 </div>
 </div>
@@ -438,7 +481,7 @@
 <!-- CTA Section -->
 <section class="relative py-section-gap overflow-hidden flex items-center justify-center text-center">
 <div class="absolute inset-0 z-0">
-<img class="w-full h-full object-cover opacity-10" data-alt="A dark and moody artistic shot of hair clippers cutting through dark hair with dust particles catching the light, highly cinematic, representing the precision and art of barbering." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAPfsCuOapoy8JEMcnmjAfYcVTWcZ6PP2L3ryUf5SXQ3aAJUf8SjX__Otpbx3n_gvVzGX8vDbfbw9dU2-CY0upDum3kMs8nhnNFKcJOf4ahdv1K1gbix59XSl9XlNmOy4IYAKKOmAWI0vyIza6w_BG_JqkgLyGazdQUPfPgFXZmvj0ak5nSocMIB0VU5iioKARWkR5vynVfpCiy67ZIo_yDPq6r2jeVwjiycs0qvbmx0Tzf2LO20QnTnQ"/>
+<img class="w-full h-full object-cover opacity-10" data-alt="Artistic barbering shot" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAPfsCuOapoy8JEMcnmjAfYcVTWcZ6PP2L3ryUf5SXQ3aAJUf8SjX__Otpbx3n_gvVzGX8vDbfbw9dU2-CY0upDum3kMs8nhnNFKcJOf4ahdv1K1gbix59XSl9XlNmOy4IYAKKOmAWI0vyIza6w_BG_JqkgLyGazdQUPfPgFXZmvj0ak5nSocMIB0VU5iioKARWkR5vynVfpCiy67ZIo_yDPq6r2jeVwjiycs0qvbmx0Tzf2LO20QnTnQ"/>
 </div>
 <div class="relative z-10 max-w-4xl px-margin-mobile">
 <h2 class="font-display-lg text-[40px] md:text-6xl mb-8 uppercase tracking-tight">Ready for a Fresh<br/>New Look?</h2>
@@ -504,87 +547,133 @@
 </button>
 </div>
 <script>
-        // Navbar scroll effect
-        const nav = document.getElementById('main-nav');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                nav.classList.add('h-16', 'md:h-20', 'shadow-md');
-                nav.classList.remove('h-20', 'md:h-24', 'shadow-sm');
+    // Image Zoom Modal Functions
+    const modal = document.getElementById('image-modal');
+    const modalImg = document.getElementById('modal-img');
+
+    function openModal(src) {
+        modalImg.src = src;
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+        document.body.classList.add('overflow-hidden');
+        setTimeout(() => {
+            modalImg.classList.remove('scale-95');
+            modalImg.classList.add('scale-100');
+        }, 10);
+    }
+
+    function closeModal() {
+        modalImg.classList.remove('scale-100');
+        modalImg.classList.add('scale-95');
+        setTimeout(() => {
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+            document.body.classList.remove('overflow-hidden');
+        }, 200);
+    }
+
+    modal.addEventListener('click', (e) => {
+        if(e.target === modal) closeModal();
+    });
+
+    // Expand Looks functionality
+    const toggleBtn = document.getElementById('toggle-looks');
+    const expandedLooks = document.getElementById('expanded-looks');
+    
+    toggleBtn.addEventListener('click', () => {
+        const isHidden = expandedLooks.classList.contains('hidden');
+        if(isHidden) {
+            expandedLooks.classList.remove('hidden');
+            toggleBtn.textContent = 'Hide Collection';
+            expandedLooks.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        } else {
+            expandedLooks.classList.add('hidden');
+            toggleBtn.textContent = 'View All 1000+ Looks';
+        }
+    });
+
+    // Navbar scroll effect
+    const nav = document.getElementById('main-nav');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            nav.classList.add('h-16', 'md:h-20', 'shadow-md');
+            nav.classList.remove('h-20', 'md:h-24', 'shadow-sm');
+        } else {
+            nav.classList.remove('h-16', 'md:h-20', 'shadow-md');
+            nav.classList.add('h-20', 'md:h-24', 'shadow-sm');
+        }
+    });
+
+    // Review carousel logic
+    const track = document.getElementById('review-track');
+    let index = 0;
+    const totalReviews = 2;
+
+    setInterval(() => {
+        index = (index + 1) % totalReviews;
+        track.style.transform = `translateX(-${index * 100}%)`;
+    }, 5000);
+
+    // Counter animation
+    const observerOptions = {
+        threshold: 0.1
+    };
+
+    const counterObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const targetText = entry.target.getAttribute('data-target');
+                const target = parseInt(targetText);
+                animateCounter(entry.target, target);
+                counterObserver.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('[data-target]').forEach(counter => {
+        counterObserver.observe(counter);
+    });
+
+    function animateCounter(element, target) {
+        let current = 0;
+        const duration = 2000;
+        const stepTime = 20;
+        const steps = duration / stepTime;
+        const increment = target / steps;
+
+        const timer = setInterval(() => {
+            current += increment;
+            if (current >= target) {
+                element.textContent = target + (target > 100 ? '+' : '');
+                clearInterval(timer);
             } else {
-                nav.classList.remove('h-16', 'md:h-20', 'shadow-md');
-                nav.classList.add('h-20', 'md:h-24', 'shadow-sm');
+                element.textContent = Math.floor(current);
+            }
+        }, stepTime);
+    }
+
+    // Active Nav Tracking
+    const sections = document.querySelectorAll('section');
+    const navLinks = document.querySelectorAll('nav a');
+
+    window.addEventListener('scroll', () => {
+        let current = '';
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.clientHeight;
+            if (pageYOffset >= (sectionTop - 200)) {
+                current = section.getAttribute('id');
             }
         });
 
-        // Review carousel logic
-        const track = document.getElementById('review-track');
-        let index = 0;
-        const totalReviews = 2;
-
-        setInterval(() => {
-            index = (index + 1) % totalReviews;
-            track.style.transform = `translateX(-${index * 100}%)`;
-        }, 5000);
-
-        // Counter animation
-        const observerOptions = {
-            threshold: 0.1
-        };
-
-        const counterObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const target = parseInt(entry.target.getAttribute('data-target'));
-                    animateCounter(entry.target, target);
-                    counterObserver.unobserve(entry.target);
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('[data-target]').forEach(counter => {
-            counterObserver.observe(counter);
+        navLinks.forEach(link => {
+            link.classList.remove('text-primary', 'border-b-2', 'border-primary', 'font-bold');
+            link.classList.add('text-secondary');
+            if (link.getAttribute('href').includes(current)) {
+                link.classList.add('text-primary', 'border-b-2', 'border-primary', 'font-bold');
+                link.classList.remove('text-secondary');
+            }
         });
-
-        function animateCounter(element, target) {
-            let current = 0;
-            const duration = 2000;
-            const stepTime = 20;
-            const steps = duration / stepTime;
-            const increment = target / steps;
-
-            const timer = setInterval(() => {
-                current += increment;
-                if (current >= target) {
-                    element.textContent = target + (target > 100 ? '+' : '');
-                    clearInterval(timer);
-                } else {
-                    element.textContent = Math.floor(current);
-                }
-            }, stepTime);
-        }
-
-        // Active Nav Tracking
-        const sections = document.querySelectorAll('section');
-        const navLinks = document.querySelectorAll('nav a');
-
-        window.addEventListener('scroll', () => {
-            let current = '';
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.clientHeight;
-                if (pageYOffset >= (sectionTop - 200)) {
-                    current = section.getAttribute('id');
-                }
-            });
-
-            navLinks.forEach(link => {
-                link.classList.remove('text-primary', 'border-b-2', 'border-primary', 'font-bold');
-                link.classList.add('text-secondary');
-                if (link.getAttribute('href').includes(current)) {
-                    link.classList.add('text-primary', 'border-b-2', 'border-primary', 'font-bold');
-                    link.classList.remove('text-secondary');
-                }
-            });
-        });
-    </script>
+    });
+</script>
 </body></html>
